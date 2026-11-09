@@ -487,6 +487,13 @@
     }
     if (c.training) $("clubTraining").textContent = c.training;
     if (c.seat) $("clubSeat").textContent = c.seat;
+    const fb = String(c.facebook || "").trim();
+    const fbUrl = /^https:\/\/(www\.|m\.)?facebook\.com\//.test(fb) ? fb : (/^[\w.\-]+$/.test(fb) ? `https://www.facebook.com/${fb}` : "");
+    $("clubFbRow").hidden = !fbUrl;
+    if (fbUrl) {
+      $("clubFb").href = fbUrl;
+      $("clubFb").textContent = fbUrl.replace(/^https:\/\/(www\.|m\.)?facebook\.com\//, "").replace(/\/$/, "") || "Pagina Facebook";
+    }
     const ig = String(c.instagram || "").replace(/[^\w.]/g, "");
     $("clubIgRow").hidden = !ig;
     if (ig) {

@@ -187,10 +187,11 @@ function validate(kind, d) {
     }
   } else if (kind === "club") {
     if (typeof d !== "object" || Array.isArray(d)) return "Contatti non validi.";
-    for (const k of ["email", "instagram", "home_gym_name", "home_gym_address", "training", "seat", "invite"]) {
+    for (const k of ["email", "instagram", "facebook", "home_gym_name", "home_gym_address", "training", "seat", "invite"]) {
       if (!isOptStr(d[k], 600)) return `Campo ${k} non valido.`;
     }
     if (d.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) return "Indirizzo email non valido.";
+    if (d.facebook && !/^(https:\/\/(www\.|m\.)?facebook\.com\/)?[\w.\-\/?=&%]+$/.test(d.facebook)) return "Link Facebook non valido.";
   }
   return null;
 }

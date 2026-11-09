@@ -471,7 +471,8 @@
     const el = e.target;
     if (!el.name) return;
     let v = el.value;
-    if (el.name === "instagram") v = v.replace(/^@+/, "").replace(/^https?:\/\/(www\.)?instagram\.com\//, "").replace(/\/$/, "");
+    if (el.name === "instagram") v = v.replace(/^@+/, "").replace(/^https?:\/\/(www\.)?instagram\.com\//, "").replace(/[/?].*$/, "");
+    if (el.name === "facebook") v = v.trim().replace(/^http:\/\//, "https://");
     state.data.club[el.name] = v;
     updateSaveBar();
   });
