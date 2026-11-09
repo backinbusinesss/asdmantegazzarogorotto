@@ -6,7 +6,7 @@
   const MATCH_DURATION_MS = 2 * 60 * 60 * 1000;
   const $ = (id) => document.getElementById(id);
 
-  const state = { season: null, players: [], filter: "all" };
+  const state = { season: null, players: [], news: [], gallery: [], club: null, filter: "all", newsShown: 3, photosShown: 12 };
 
   /* ---------- utilità ---------- */
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -125,12 +125,18 @@
 
   async function load() {
     try {
-      const [season, players] = await Promise.all([
+      const [season, players, news, gallery, club] = await Promise.all([
         getJSON("data/season.json"),
         getJSON("data/players.json").catch(() => []),
+        getJSON("data/news.json").catch(() => []),
+        getJSON("data/gallery.json").catch(() => []),
+        getJSON("data/club.json").catch(() => null),
       ]);
       state.season = season;
       state.players = Array.isArray(players) ? players : [];
+      state.news = Array.isArray(news) ? news : [];
+      state.gallery = Array.isArray(gallery) ? gallery : [];
+      state.club = club && typeof club === "object" ? club : null;
       render();
     } catch (err) {
       console.error(err);
@@ -156,6 +162,9 @@
     renderFixtures();
     renderStandings();
     renderRoster();
+    renderNews();
+    renderPhotos();
+    renderClub();
   }
 
   function nextMatch() {
@@ -370,12 +379,120 @@
       return;
     }
     box.innerHTML = players.map((p) => `
-      <article class="player">
+      <article class="player ${safeImg(p.photo) ? "player--photo" : ""}">
+        ${safeImg(p.photo) ? `<img class="player__photo" src="${esc(p.photo)}" alt="" loading="lazy">` : ""}
         <span class="player__num">${esc(p.number ?? "")}</span>
         <span class="player__name">${esc(p.name)}</span>
         <span class="player__role">${esc(p.role || "")}</span>
         ${p.captain ? `<span class="player__cap" title="Capitano" aria-label="Capitano">C</span>` : ""}
       </article>`).join("");
+  }
+
+  /* ---------- news ---------- */
+  const fmtNewsDate = new Intl.DateTimeFormat("it-IT", { day: "numeric", month: "long", year: "numeric" });
+  function safeImg(p) { return typeof p === "string" && /^assets\/uploads\/[\w.-]+$/.test(p) ? p : ""; }
+
+  function setOptional(sectionId, visible) {
+    $(sectionId).hidden = !visible;
+    const link = document.querySelector(`.nav a[href="#${sectionId}"]`);
+    if (link) link.hidden = !visible;
+  }
+
+  function renderNews() {
+    const items = state.news.filter((n) => n && n.title).slice().sort((a, b) => String(b.date).localeCompare(String(a.date)));
+    setOptional("news", items.length > 0);
+    if (!items.length) return;
+    const shown = items.slice(0, state.newsShown);
+    $("newsList").innerHTML = shown.map((n, i) => {
+      const img = safeImg(n.image);
+      const d = new Date(`${n.date}T12:00:00`);
+      const long = (n.text || "").length > 280;
+      return `<article class="post ${img ? "" : "post--noimg"}">
+        ${img ? `<img class="post__img" src="${esc(img)}" alt="" loading="${i ? "lazy" : "eager"}">` : ""}
+        <div class="post__body">
+          <time datetime="${esc(n.date)}">${isNaN(d) ? "" : esc(fmtNewsDate.format(d))}</time>
+          <h3>${esc(n.title)}</h3>
+          ${n.text ? `<p class="post__text ${long ? "is-clamped" : ""}">${esc(n.text)}</p>` : ""}
+          ${long ? `<button type="button" class="post__more" aria-expanded="false">Leggi tutto</button>` : ""}
+        </div>
+      </article>`;
+    }).join("");
+    $("newsList").querySelectorAll(".post__more").forEach((b) => b.addEventListener("click", () => {
+      const t = b.previousElementSibling;
+      const open = t.classList.toggle("is-clamped") === false;
+      b.textContent = open ? "Mostra meno" : "Leggi tutto";
+      b.setAttribute("aria-expanded", String(open));
+    }));
+    $("newsMore").hidden = items.length <= state.newsShown;
+  }
+  $("newsMore").addEventListener("click", () => { state.newsShown += 6; renderNews(); });
+
+  /* ---------- foto ---------- */
+  let photoList = [];
+  function renderPhotos() {
+    photoList = state.gallery.filter((g) => g && safeImg(g.src));
+    setOptional("foto", photoList.length > 0);
+    if (!photoList.length) return;
+    $("photoGrid").innerHTML = photoList.slice(0, state.photosShown).map((g, i) => `
+      <li><button type="button" data-i="${i}" aria-label="Ingrandisci foto${g.caption ? `: ${esc(g.caption)}` : ""}">
+        <img src="${esc(g.src)}" alt="${esc(g.caption || "")}" loading="lazy">
+      </button></li>`).join("");
+    $("photoGrid").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => openLightbox(Number(b.dataset.i))));
+    $("photosMore").hidden = photoList.length <= state.photosShown;
+  }
+  $("photosMore").addEventListener("click", () => { state.photosShown += 12; renderPhotos(); });
+
+  let lbIndex = 0;
+  function showLightbox(i) {
+    lbIndex = (i + photoList.length) % photoList.length;
+    const g = photoList[lbIndex];
+    $("lbImg").src = g.src;
+    $("lbImg").alt = g.caption || "";
+    $("lbCap").textContent = g.caption || "";
+    const many = photoList.length > 1;
+    $("lbPrev").hidden = !many;
+    $("lbNext").hidden = !many;
+  }
+  function openLightbox(i) { showLightbox(i); $("lightbox").showModal(); }
+  $("lbPrev").addEventListener("click", () => showLightbox(lbIndex - 1));
+  $("lbNext").addEventListener("click", () => showLightbox(lbIndex + 1));
+  $("lbClose").addEventListener("click", () => $("lightbox").close());
+  $("lightbox").addEventListener("click", (e) => { if (e.target === $("lightbox") || e.target.tagName === "FIGURE") $("lightbox").close(); });
+  $("lightbox").addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") showLightbox(lbIndex - 1);
+    if (e.key === "ArrowRight") showLightbox(lbIndex + 1);
+  });
+  let touchX = null;
+  $("lightbox").addEventListener("touchstart", (e) => { touchX = e.touches[0].clientX; }, { passive: true });
+  $("lightbox").addEventListener("touchend", (e) => {
+    if (touchX === null) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 50) showLightbox(lbIndex + (dx < 0 ? 1 : -1));
+    touchX = null;
+  });
+
+  /* ---------- contatti ---------- */
+  function renderClub() {
+    const c = state.club;
+    if (!c) return;
+    if (c.invite) $("clubInvite").textContent = c.invite;
+    if (c.email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(c.email)) {
+      $("clubMail").textContent = c.email;
+      $("clubMailBtn").href = `mailto:${c.email}?subject=Info%20pallavolo`;
+    }
+    if (c.home_gym_name || c.home_gym_address) {
+      const gym = $("clubGym");
+      gym.innerHTML = `${esc(c.home_gym_name || "")}${c.home_gym_name && c.home_gym_address ? "<br>" : ""}${esc(c.home_gym_address || "")}`;
+      gym.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${c.home_gym_name || ""} ${c.home_gym_address || ""}`)}`;
+    }
+    if (c.training) $("clubTraining").textContent = c.training;
+    if (c.seat) $("clubSeat").textContent = c.seat;
+    const ig = String(c.instagram || "").replace(/[^\w.]/g, "");
+    $("clubIgRow").hidden = !ig;
+    if (ig) {
+      $("clubIg").textContent = `@${ig}`;
+      $("clubIg").href = `https://www.instagram.com/${ig}/`;
+    }
   }
 
   /* ---------- nav attiva ---------- */

@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Area admin | Mantegazza Rogorotto</title>
+  <meta name="theme-color" content="#0A2540">
+  <link rel="icon" href="../assets/crest.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/icon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Big+Shoulders+Display:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css?v=5">
+  <link rel="stylesheet" href="admin.css?v=1">
+</head>
+<body class="admin">
+
+  <!-- ============ LOGIN ============ -->
+  <main class="login" id="loginView">
+    <form class="login__card" id="loginForm" novalidate>
+      <img src="../assets/crest.svg" alt="" width="64" height="72">
+      <h1>Area admin</h1>
+      <p class="login__sub">Mantegazza Rogorotto</p>
+      <label class="field">
+        <span>Nome utente</span>
+        <input type="text" name="username" id="username" autocomplete="username" autocapitalize="none" spellcheck="false" required>
+      </label>
+      <label class="field">
+        <span>Password</span>
+        <span class="pw">
+          <input type="password" name="password" id="password" autocomplete="current-password" required>
+          <button type="button" class="pw__toggle" id="pwToggle" aria-label="Mostra password" aria-pressed="false">Mostra</button>
+        </span>
+      </label>
+      <label class="check">
+        <input type="checkbox" id="remember">
+        <span>Resta collegato su questo dispositivo</span>
+      </label>
+      <p class="form-error" id="loginError" role="alert" hidden></p>
+      <button type="submit" class="btn btn--navy btn--lg btn--block" id="loginBtn">Accedi</button>
+      <a class="login__back" href="../">Torna al sito</a>
+    </form>
+  </main>
+
+  <!-- ============ PANNELLO ============ -->
+  <div class="app" id="appView" hidden>
+    <header class="app__bar">
+      <div class="app__brand">
+        <img src="../assets/crest.svg" alt="" width="30" height="34">
+        <span>Admin</span>
+      </div>
+      <nav class="tabs" role="tablist" aria-label="Sezioni da modificare">
+        <button role="tab" id="tab-players" aria-controls="panel-players" aria-selected="true" data-tab="players">Rosa</button>
+        <button role="tab" id="tab-news" aria-controls="panel-news" aria-selected="false" data-tab="news" tabindex="-1">News</button>
+        <button role="tab" id="tab-gallery" aria-controls="panel-gallery" aria-selected="false" data-tab="gallery" tabindex="-1">Foto</button>
+        <button role="tab" id="tab-club" aria-controls="panel-club" aria-selected="false" data-tab="club" tabindex="-1">Contatti</button>
+      </nav>
+      <div class="app__user">
+        <a href="../" target="_blank" rel="noopener">Vedi il sito</a>
+        <button type="button" id="logoutBtn">Esci <span id="whoami"></span></button>
+      </div>
+    </header>
+
+    <main class="app__main wrap">
+      <p class="loading" id="loading">Carico i contenuti…</p>
+
+      <!-- ROSA -->
+      <section class="panel" id="panel-players" role="tabpanel" aria-labelledby="tab-players">
+        <div class="panel__head">
+          <div>
+            <h2>Rosa</h2>
+            <p>Giocatrici e giocatori della stagione. L'ordine sul sito segue il numero di maglia.</p>
+          </div>
+          <button type="button" class="btn btn--teal" id="addPlayer">Aggiungi giocatore</button>
+        </div>
+        <ul class="list" id="playersList"></ul>
+        <p class="empty" id="playersEmpty" hidden>Nessun giocatore. Finché la rosa è vuota, sul sito compare "Rosa in arrivo".</p>
+      </section>
+
+      <!-- NEWS -->
+      <section class="panel" id="panel-news" role="tabpanel" aria-labelledby="tab-news" hidden>
+        <div class="panel__head">
+          <div>
+            <h2>News</h2>
+            <p>Avvisi, resoconti delle partite, eventi. Sul sito compaiono le più recenti per prime.</p>
+          </div>
+          <button type="button" class="btn btn--teal" id="addNews">Scrivi una news</button>
+        </div>
+        <ul class="list" id="newsList"></ul>
+        <p class="empty" id="newsEmpty" hidden>Nessuna news. Finché non ce ne sono, la sezione non compare sul sito.</p>
+      </section>
+
+      <!-- FOTO -->
+      <section class="panel" id="panel-gallery" role="tabpanel" aria-labelledby="tab-gallery" hidden>
+        <div class="panel__head">
+          <div>
+            <h2>Foto</h2>
+            <p>Le foto vengono ridotte automaticamente prima del caricamento. Puoi sceglierne più di una alla volta.</p>
+          </div>
+          <label class="btn btn--teal">
+            Carica foto
+            <input type="file" id="galleryUpload" accept="image/jpeg,image/png,image/webp,image/heic" multiple hidden>
+          </label>
+        </div>
+        <ul class="gallery-grid" id="galleryList"></ul>
+        <p class="empty" id="galleryEmpty" hidden>Nessuna foto. Finché non ce ne sono, la sezione non compare sul sito.</p>
+      </section>
+
+      <!-- CONTATTI -->
+      <section class="panel" id="panel-club" role="tabpanel" aria-labelledby="tab-club" hidden>
+        <div class="panel__head">
+          <div>
+            <h2>Contatti</h2>
+            <p>I testi della sezione "Vieni a giocare con noi" in fondo al sito.</p>
+          </div>
+        </div>
+        <form class="card form-grid" id="clubForm">
+          <label class="field field--wide">
+            <span>Testo di invito</span>
+            <textarea name="invite" rows="3" maxlength="600"></textarea>
+          </label>
+          <label class="field">
+            <span>Email</span>
+            <input type="email" name="email" maxlength="120" autocomplete="off">
+          </label>
+          <label class="field">
+            <span>Instagram</span>
+            <span class="prefix"><b>@</b><input type="text" name="instagram" maxlength="60" autocapitalize="none" spellcheck="false"></span>
+          </label>
+          <label class="field">
+            <span>Palestra delle partite in casa</span>
+            <input type="text" name="home_gym_name" maxlength="120">
+          </label>
+          <label class="field">
+            <span>Indirizzo della palestra</span>
+            <input type="text" name="home_gym_address" maxlength="160">
+          </label>
+          <label class="field field--wide">
+            <span>Allenamenti</span>
+            <textarea name="training" rows="2" maxlength="300"></textarea>
+          </label>
+          <label class="field field--wide">
+            <span>Sede</span>
+            <input type="text" name="seat" maxlength="160">
+          </label>
+        </form>
+      </section>
+    </main>
+
+    <footer class="savebar" id="saveBar" data-state="clean">
+      <div class="wrap savebar__inner">
+        <p id="saveStatus">Nessuna modifica da salvare.</p>
+        <div class="savebar__btns">
+          <button type="button" class="btn btn--ghost-light" id="discardBtn" disabled>Annulla modifiche</button>
+          <button type="button" class="btn btn--gold" id="saveBtn" disabled>Salva modifiche</button>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- modale news -->
+  <dialog class="modal" id="newsDialog" aria-labelledby="newsDialogTitle">
+    <form method="dialog" class="modal__body" id="newsForm" novalidate>
+      <h2 id="newsDialogTitle">Nuova news</h2>
+      <label class="field">
+        <span>Titolo</span>
+        <input type="text" name="title" maxlength="140" required>
+      </label>
+      <label class="field">
+        <span>Data</span>
+        <input type="date" name="date" required>
+      </label>
+      <label class="field">
+        <span>Testo</span>
+        <textarea name="text" rows="7" maxlength="5000"></textarea>
+      </label>
+      <div class="field">
+        <span>Foto (facoltativa)</span>
+        <div class="imgpick" id="newsImgPick"></div>
+      </div>
+      <p class="form-error" id="newsError" role="alert" hidden></p>
+      <div class="modal__actions">
+        <button type="button" class="btn btn--ghost" value="cancel" id="newsCancel">Annulla</button>
+        <button type="submit" class="btn btn--navy" value="ok">Conferma</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="admin.js?v=1" defer></script>
+</body>
+</html>

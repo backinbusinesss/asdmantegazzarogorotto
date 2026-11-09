@@ -46,3 +46,27 @@ python -m http.server 8765
 ```
 
 Poi apri http://localhost:8765.
+
+## Area admin
+
+Pannello su **`/admin`** (es. https://backinbusinesss.github.io/asdmantegazzarogorotto/admin/): si entra con utente e password
+e si gestiscono **rosa, news, foto e contatti**. Al salvataggio il sito si aggiorna in circa un minuto.
+
+Come funziona: il pannello parla con un piccolo server su Cloudflare Workers (`worker/`), che controlla la password
+e salva i file nel repository. Password e chiavi stanno solo nei secret di Cloudflare, mai nel codice.
+
+| Secret Cloudflare | Cosa contiene |
+| --- | --- |
+| `ADMIN_USERS` | utenti admin con password cifrata (PBKDF2) |
+| `SESSION_SECRET` | chiave casuale per le sessioni |
+| `GITHUB_TOKEN` | token GitHub *fine-grained* con permesso Contents su questo solo repository |
+
+Comandi (dalla cartella `worker`, su Windows usare `npx.cmd`):
+
+```bash
+node scripts/admin-users.mjs                 # crea/sostituisce TUTTI gli utenti admin
+npx wrangler@4 secret put GITHUB_TOKEN       # cambia il token GitHub
+npx wrangler@4 deploy                        # pubblica modifiche al server
+```
+
+Per togliere l'accesso a qualcuno basta rilanciare `admin-users.mjs` senza di lui: la sua sessione smette subito di funzionare.

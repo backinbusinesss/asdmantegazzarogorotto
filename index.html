@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Big+Shoulders+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=4">
+  <link rel="stylesheet" href="css/style.css?v=5">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -51,7 +51,9 @@
       <nav class="nav" aria-label="Sezioni">
         <a href="#partite">Partite</a>
         <a href="#classifica">Classifica</a>
+        <a href="#news" data-optional hidden>News</a>
         <a href="#squadra">Squadra</a>
+        <a href="#foto" data-optional hidden>Foto</a>
         <a href="#contatti">Contatti</a>
       </nav>
     </div>
@@ -219,6 +221,19 @@
       </div>
     </section>
 
+    <section class="section" id="news" aria-labelledby="news-title" hidden>
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <h2 id="news-title">News</h2>
+            <p class="section__sub">Avvisi e racconti dalla squadra</p>
+          </div>
+        </div>
+        <div class="news" id="newsList"></div>
+        <div class="section__actions"><button type="button" class="btn btn--ghost" id="newsMore" hidden>Mostra altre news</button></div>
+      </div>
+    </section>
+
     <section class="section" id="squadra" aria-labelledby="squadra-title">
       <div class="wrap">
         <div class="section__head">
@@ -231,33 +246,56 @@
       </div>
     </section>
 
+    <section class="section section--photos" id="foto" aria-labelledby="foto-title" hidden>
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <h2 id="foto-title">Foto</h2>
+            <p class="section__sub">Dal campo e dintorni</p>
+          </div>
+        </div>
+        <ul class="photos" id="photoGrid"></ul>
+        <div class="section__actions"><button type="button" class="btn btn--outline-light" id="photosMore" hidden>Mostra altre foto</button></div>
+      </div>
+    </section>
+
+    <dialog class="lightbox" id="lightbox" aria-label="Foto ingrandita">
+      <figure>
+        <img id="lbImg" alt="">
+        <figcaption id="lbCap"></figcaption>
+      </figure>
+      <button type="button" class="lightbox__btn lightbox__prev" id="lbPrev" aria-label="Foto precedente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button type="button" class="lightbox__btn lightbox__next" id="lbNext" aria-label="Foto successiva"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      <button type="button" class="lightbox__btn lightbox__close" id="lbClose" aria-label="Chiudi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </dialog>
+
     <section class="section section--teal" id="contatti" aria-labelledby="contatti-title">
       <div class="wrap contacts">
         <div class="contacts__main">
           <h2 id="contatti-title">Vieni a giocare con noi</h2>
-          <p>Cerchiamo sempre giocatrici e giocatori con voglia di divertirsi. Scrivici e ti diciamo giorni e orari degli allenamenti, oppure passa a fare il tifo il venerdì sera.</p>
-          <a class="btn btn--navy btn--lg" href="mailto:asdmantegazzarogorotto@gmail.com?subject=Info%20pallavolo">
+          <p id="clubInvite">Cerchiamo sempre giocatrici e giocatori con voglia di divertirsi. Scrivici e ti diciamo giorni e orari degli allenamenti, oppure passa a fare il tifo il venerdì sera.</p>
+          <a class="btn btn--navy btn--lg" id="clubMailBtn" href="mailto:asdmantegazzarogorotto@gmail.com?subject=Info%20pallavolo">
             <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
             Scrivici una mail
           </a>
-          <p class="contacts__mail">asdmantegazzarogorotto@gmail.com</p>
+          <p class="contacts__mail" id="clubMail">asdmantegazzarogorotto@gmail.com</p>
         </div>
         <dl class="facts">
           <div>
             <dt>Partite in casa</dt>
-            <dd><a href="https://www.google.com/maps/search/?api=1&query=Palestra+Comunale+Airaghi+Via+Paolo+Ferrario+82+Vanzago" target="_blank" rel="noopener">Palestra comunale T. Airaghi<br>Via Paolo Ferrario 82, Vanzago</a></dd>
+            <dd><a id="clubGym" href="https://www.google.com/maps/search/?api=1&query=Palestra+Comunale+Airaghi+Via+Paolo+Ferrario+82+Vanzago" target="_blank" rel="noopener">Palestra comunale T. Airaghi<br>Via Paolo Ferrario 82, Vanzago</a></dd>
           </div>
           <div>
             <dt>Allenamenti</dt>
-            <dd>Palestra Airaghi e palestra della scuola primaria De Filippo, Vanzago</dd>
+            <dd id="clubTraining">Palestra Airaghi e palestra della scuola primaria De Filippo, Vanzago</dd>
           </div>
           <div>
             <dt>Sede</dt>
-            <dd>Via Tiziano 8, Vanzago (MI)</dd>
+            <dd id="clubSeat">Via Tiziano 8, Vanzago (MI)</dd>
           </div>
-          <div>
+          <div id="clubIgRow">
             <dt>Instagram</dt>
-            <dd><a href="https://www.instagram.com/asdmantegazzarogorotto/" target="_blank" rel="noopener">@asdmantegazzarogorotto</a></dd>
+            <dd><a id="clubIg" href="https://www.instagram.com/asdmantegazzarogorotto/" target="_blank" rel="noopener">@asdmantegazzarogorotto</a></dd>
           </div>
         </dl>
       </div>
@@ -279,6 +317,6 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="js/main.js?v=3" defer></script>
+  <script src="js/main.js?v=5" defer></script>
 </body>
 </html>

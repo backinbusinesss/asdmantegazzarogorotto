@@ -1,0 +1,20 @@
+name = "mr-admin"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+workers_dev = true
+
+[vars]
+GITHUB_REPO = "backinbusinesss/asdmantegazzarogorotto"
+GITHUB_BRANCH = "main"
+ALLOWED_ORIGINS = "https://backinbusinesss.github.io,http://localhost:8765"
+
+# massimo 8 tentativi di login al minuto per indirizzo IP
+[[ratelimits]]
+name = "LOGIN_LIMITER"
+namespace_id = "1001"
+simple = { limit = 8, period = 60 }
+
+# Secret (impostati con "wrangler secret put", mai nel codice):
+#   GITHUB_TOKEN    token GitHub con permesso di scrittura solo su questo repository
+#   SESSION_SECRET  chiave casuale per firmare le sessioni
+#   ADMIN_USERS     utenti admin con password cifrata (vedi scripts/admin-users.mjs)
