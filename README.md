@@ -13,6 +13,8 @@ Calendario e risultati arrivano dal portale ufficiale della Volley Cup
 - La GitHub Action `.github/workflows/sync.yml` lo esegue **ogni 30 minuti** e fa commit solo se qualcosa è cambiato.
   Si può lanciare a mano da *Actions → Aggiorna calendario e risultati → Run workflow*.
 - La pagina ricarica i dati ogni 5 minuti senza bisogno di aggiornare il browser.
+- Lo stesso script genera `calendar.ics` (il calendario a cui ci si iscrive da iPhone, Google Calendar o Outlook,
+  che si aggiorna da solo se una partita viene spostata) e `cal/<id>.ics` per aggiungere una singola partita.
 
 ## Cosa modificare a mano
 

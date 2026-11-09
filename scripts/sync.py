@@ -12,7 +12,7 @@ import json
 import sys
 import urllib.parse
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -130,6 +130,99 @@ def standings(matches: list[dict]) -> list[dict]:
     return rows
 
 
+VTIMEZONE = """BEGIN:VTIMEZONE
+TZID:Europe/Rome
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE"""
+
+
+def ics_escape(s: str) -> str:
+    return s.replace("\\", "\\\\").replace(";", "\\;").replace(",", "\\,").replace("\n", "\\n")
+
+
+def fold(line: str) -> str:
+    """Spezza le righe oltre 75 byte come richiesto dallo standard iCalendar."""
+    out, cur = [], ""
+    for ch in line:
+        if len((cur + ch).encode("utf-8")) > 74:
+            out.append(cur)
+            cur = " " + ch
+        else:
+            cur += ch
+    out.append(cur)
+    return "\r\n".join(out)
+
+
+def nice(name: str) -> str:
+    return " ".join(w.capitalize() for w in name.split())
+
+
+def build_ics(matches: list[dict], competition: str, stamp: str, cal_name: str) -> str:
+    lines = [
+        "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//ASD Mantegazza Rogorotto//Calendario//IT",
+        "CALSCALE:GREGORIAN", "METHOD:PUBLISH",
+        f"X-WR-CALNAME:{ics_escape(cal_name)}", "X-WR-TIMEZONE:Europe/Rome",
+        "REFRESH-INTERVAL;VALUE=DURATION:PT6H", "X-PUBLISHED-TTL:PT6H",
+        *VTIMEZONE.split("\n"),
+    ]
+    for m in matches:
+        start = datetime.fromisoformat(m["datetime"])
+        end = start + timedelta(hours=2)
+        title = f"{nice(m['home'])} - {nice(m['away'])}"
+        desc = f"{competition}, giornata {m['round']}"
+        if m["result"]:
+            title = f"{nice(m['home'])} {m['result'][0]}-{m['result'][1]} {nice(m['away'])}"
+            desc += "\nParziali: " + ", ".join(f"{a}-{b}" for a, b in m["sets"])
+        v = m["venue"]
+        lines += [
+            "BEGIN:VEVENT",
+            f"UID:volleycup-{m['id']}@mantegazzarogorotto",
+            f"DTSTAMP:{stamp}",
+            f"DTSTART;TZID=Europe/Rome:{start:%Y%m%dT%H%M%S}",
+            f"DTEND;TZID=Europe/Rome:{end:%Y%m%dT%H%M%S}",
+            f"SUMMARY:{ics_escape(title)}",
+            f"LOCATION:{ics_escape(f'{v['name']}, {v['address']}, {v['city']}')}",
+            f"DESCRIPTION:{ics_escape(desc)}",
+        ]
+        if v.get("lat") and v.get("lng"):
+            lines.append(f"GEO:{v['lat']};{v['lng']}")
+        lines.append("END:VEVENT")
+    lines.append("END:VCALENDAR")
+    return "\r\n".join(fold(l) for l in lines) + "\r\n"
+
+
+def write_if_changed(path: Path, text: str) -> bool:
+    if path.exists() and path.read_bytes() == text.encode("utf-8"):
+        return False
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(text.encode("utf-8"))
+    return True
+
+
+def write_calendars(data: dict) -> int:
+    stamp = data["updated_at"].replace("-", "").replace(":", "").replace("+0000", "Z")[:15] + "Z"
+    changed = 0
+    changed += write_if_changed(ROOT / "calendar.ics",
+                                build_ics(data["matches"], data["competition"], stamp, "Mantegazza Rogorotto"))
+    for m in data["matches"]:
+        changed += write_if_changed(ROOT / "cal" / f"{m['id']}.ics",
+                                    build_ics([m], data["competition"], stamp, "Mantegazza Rogorotto"))
+    return changed
+
+
 def main() -> int:
     c = CONFIG
     try:
@@ -161,12 +254,15 @@ def main() -> int:
             old = json.loads(OUT.read_text(encoding="utf-8"))
         except json.JSONDecodeError:
             old = None
-    if old and {k: v for k, v in old.items() if k != "updated_at"} == data:
-        print("Nessuna novità.")
+    if old and old.get("updated_at") and {k: v for k, v in old.items() if k != "updated_at"} == data:
+        data["updated_at"] = old["updated_at"]
+        n = write_calendars(data)
+        print("Nessuna novità." + (f" Rigenerati {n} file calendario." if n else ""))
         return 0
 
     data["updated_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
     OUT.write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    write_calendars(data)
     print(f"Aggiornato: {len(ours)} partite nostre, {len(all_matches)} nel girone.")
     return 0
 

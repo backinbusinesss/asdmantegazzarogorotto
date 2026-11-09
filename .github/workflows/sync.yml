@@ -25,12 +25,12 @@ jobs:
         run: python scripts/sync.py
       - name: Salva se ci sono novità
         run: |
-          if git diff --quiet -- data/season.json; then
+          if [ -z "$(git status --porcelain -- data/season.json calendar.ics cal)" ]; then
             echo "Nessuna novità"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
-          git add data/season.json
+          git add data/season.json calendar.ics cal
           git commit -m "Aggiorna risultati Volley Cup"
           git push
