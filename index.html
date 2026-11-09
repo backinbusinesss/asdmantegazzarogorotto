@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mantegazza Rogorotto | Pallavolo mista a Vanzago</title>
+  <meta name="description" content="ASD Mantegazza Rogorotto, pallavolo mista di Vanzago (MI). Calendario, risultati e classifica del campionato Volley Cup Top misto, aggiornati dai dati ufficiali.">
+  <meta name="theme-color" content="#1D3F91">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mantegazza Rogorotto, pallavolo mista">
+  <meta property="og:description" content="Prossima partita, risultati e classifica del campionato Volley Cup Top misto.">
+  <link rel="icon" href="assets/crest.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Big+Shoulders+Display:wght@500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=2">
+</head>
+<body>
+  <a class="skip" href="#partite">Vai al calendario</a>
+
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <a class="brand" href="#top">
+        <img src="assets/crest.svg" alt="" width="40" height="40">
+        <span>Mantegazza Rogorotto</span>
+      </a>
+      <nav aria-label="Sezioni">
+        <a href="#partite">Partite</a>
+        <a href="#classifica">Classifica</a>
+        <a href="#squadra">Squadra</a>
+        <a href="#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <svg class="hero__court" viewBox="0 0 900 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <g fill="none" stroke="#fff" stroke-width="5">
+          <rect x="60" y="80" width="780" height="440"/>
+          <line x1="450" y1="80" x2="450" y2="520"/>
+          <line x1="320" y1="80" x2="320" y2="520" stroke-dasharray="0"/>
+          <line x1="580" y1="80" x2="580" y2="520"/>
+        </g>
+        <g fill="none" stroke="#E8BF86" stroke-width="3" opacity=".55">
+          <circle cx="450" cy="300" r="90"/>
+          <line x1="0" y1="300" x2="900" y2="300"/>
+        </g>
+      </svg>
+
+      <div class="wrap hero__grid">
+        <div class="hero__text">
+          <h1 id="hero-title" class="hero__title">
+            <span>Mantegazza</span>
+            <span>Rogorotto</span>
+          </h1>
+          <p class="hero__lede">Pallavolo mista di Vanzago. Un gruppo di amici che il venerdì sera scende in campo alla palestra Airaghi.</p>
+          <p class="hero__league" id="leagueLine">Volley Cup, Top misto</p>
+        </div>
+
+        <div class="board" id="board" aria-live="polite">
+          <div class="board__head">
+            <span id="boardLabel">Prossima partita</span>
+            <span id="boardDate"></span>
+          </div>
+          <div class="board__teams">
+            <div class="board__team">
+              <span class="board__side">Casa</span>
+              <strong id="boardHome">…</strong>
+            </div>
+            <div class="board__vs" id="boardScore">vs</div>
+            <div class="board__team board__team--away">
+              <span class="board__side">Ospiti</span>
+              <strong id="boardAway">…</strong>
+            </div>
+          </div>
+          <div class="board__clock" id="boardClock" role="timer" aria-label="Tempo alla partita">
+            <div><b id="cdD">--</b><span>giorni</span></div>
+            <div><b id="cdH">--</b><span>ore</span></div>
+            <div><b id="cdM">--</b><span>min</span></div>
+            <div><b id="cdS">--</b><span>sec</span></div>
+          </div>
+          <div class="board__foot">
+            <a id="boardVenue" href="#" target="_blank" rel="noopener">Palestra</a>
+            <button type="button" class="board__ics" id="boardIcs">Aggiungi al calendario</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="ticker">
+        <div class="wrap ticker__inner">
+          <p id="lastResult">Carico l'ultimo risultato…</p>
+          <p id="tablePos"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="partite" aria-labelledby="partite-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="partite-title">Calendario e risultati</h2>
+          <div class="filters" role="group" aria-label="Filtra partite">
+            <button type="button" data-filter="all" aria-pressed="true">Tutte</button>
+            <button type="button" data-filter="home" aria-pressed="false">In casa</button>
+            <button type="button" data-filter="away" aria-pressed="false">In trasferta</button>
+          </div>
+        </div>
+        <ol class="fixtures" id="fixtures"></ol>
+        <div class="section__actions">
+          <button type="button" class="btn" id="seasonIcs">Scarica tutto il calendario (.ics)</button>
+          <a class="btn btn--ghost" id="sourceLink" href="#" target="_blank" rel="noopener">Calendario ufficiale Volley Cup</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--floor" id="classifica" aria-labelledby="classifica-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="classifica-title">Classifica <span id="groupName"></span></h2>
+        </div>
+        <div class="table-scroll">
+          <table class="standings">
+            <thead>
+              <tr>
+                <th scope="col"><abbr title="Posizione">#</abbr></th>
+                <th scope="col" class="t-left">Squadra</th>
+                <th scope="col"><abbr title="Punti">Pt</abbr></th>
+                <th scope="col"><abbr title="Giocate">G</abbr></th>
+                <th scope="col"><abbr title="Vinte">V</abbr></th>
+                <th scope="col"><abbr title="Perse">P</abbr></th>
+                <th scope="col">Set</th>
+                <th scope="col" class="t-left">Ultime</th>
+              </tr>
+            </thead>
+            <tbody id="standings"></tbody>
+          </table>
+        </div>
+        <p class="note">Calcolata dai risultati ufficiali: 3 punti per le vittorie 3‑0 e 3‑1, 2 punti per il 3‑2 e 1 alla squadra sconfitta al tie-break.</p>
+      </div>
+    </section>
+
+    <section class="section" id="squadra" aria-labelledby="squadra-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="squadra-title">La squadra 2026/27</h2>
+        </div>
+        <div id="roster" class="roster"></div>
+      </div>
+    </section>
+
+    <section class="section section--blue" id="contatti" aria-labelledby="contatti-title">
+      <div class="wrap contacts">
+        <div>
+          <h2 id="contatti-title">Vieni a giocare o a tifare</h2>
+          <p>Cerchiamo sempre persone con voglia di giocare. Scrivici per sapere orari e giorni degli allenamenti.</p>
+          <a class="btn btn--light" href="mailto:asdmantegazzarogorotto@gmail.com">Scrivi a asdmantegazzarogorotto@gmail.com</a>
+        </div>
+        <dl class="facts">
+          <div>
+            <dt>Partite in casa</dt>
+            <dd><a href="https://www.google.com/maps/search/?api=1&query=Palestra+Comunale+Airaghi+Via+Paolo+Ferrario+82+Vanzago" target="_blank" rel="noopener">Palestra comunale T. Airaghi<br>Via Paolo Ferrario 82, Vanzago</a></dd>
+          </div>
+          <div>
+            <dt>Allenamenti</dt>
+            <dd>Palestra Airaghi e palestra della scuola primaria De Filippo, Vanzago</dd>
+          </div>
+          <div>
+            <dt>Sede</dt>
+            <dd>Via Tiziano 8, Vanzago (MI)</dd>
+          </div>
+          <div>
+            <dt>Social</dt>
+            <dd><a href="https://www.instagram.com/asdmantegazzarogorotto/" target="_blank" rel="noopener">Instagram</a></dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <p>ASD Mantegazza Rogorotto, Vanzago (MI)</p>
+      <p>Calendario e risultati dal portale ufficiale <a href="https://www.volleycup.it/" target="_blank" rel="noopener">Volley Cup</a>. <span id="updated"></span></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js?v=2" defer></script>
+</body>
+</html>

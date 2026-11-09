@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Mantegazza Rogorotto">
+  <rect width="64" height="64" rx="14" fill="#1D3F91"/>
+  <path d="M0 44h64" stroke="#E8BF86" stroke-width="5"/>
+  <path d="M0 50h64" stroke="#fff" stroke-width="1.5" opacity=".8"/>
+  <text x="32" y="38" text-anchor="middle" font-family="'Big Shoulders Display', 'Arial Narrow', Arial, sans-serif" font-weight="900" font-size="30" letter-spacing="-.5" fill="#fff">MR</text>
+</svg>

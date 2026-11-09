@@ -1,0 +1,1213 @@
+{
+ "source": "https://ivl.usacli.it/CalendarioView?territorio_id=3&societa_id=421&inizio_stagione=2026-09-01T00:00:00.000Z&fine_stagione=2027-08-31T00:00:00.000Z",
+ "competition": "Volley Cup, Top misto",
+ "group": "Girone A",
+ "team": "MANTEGAZZA ROGOROTTO",
+ "matches": [
+  {
+   "id": 33596,
+   "code": "TOP GIR.A08",
+   "round": 1,
+   "datetime": "2026-10-30T21:15:00",
+   "postponed": false,
+   "home": "BLACK PANTHERS",
+   "away": "MANTEGAZZA ROGOROTTO",
+   "venue": {
+    "name": "Pal. Buccinasco",
+    "address": "Via degli Alpini, 48",
+    "city": "Buccinasco",
+    "lat": 45.4333731,
+    "lng": 9.1220764
+   },
+   "result": [
+    1,
+    3
+   ],
+   "sets": [
+    [
+     23,
+     25
+    ],
+    [
+     21,
+     25
+    ],
+    [
+     25,
+     22
+    ],
+    [
+     23,
+     25
+    ]
+   ]
+  },
+  {
+   "id": 33591,
+   "code": "TOP GIR.A03",
+   "round": 2,
+   "datetime": "2026-11-06T21:15:00",
+   "postponed": false,
+   "home": "VISCONTINI GIALLA",
+   "away": "MANTEGAZZA ROGOROTTO",
+   "venue": {
+    "name": "Palestra Comunale",
+    "address": "Via Papa Giovanni XXIII, 6",
+    "city": "Pero",
+    "lat": 45.5117226,
+    "lng": 9.0790097
+   },
+   "result": [
+    3,
+    0
+   ],
+   "sets": [
+    [
+     25,
+     16
+    ],
+    [
+     25,
+     19
+    ],
+    [
+     25,
+     22
+    ]
+   ]
+  },
+  {
+   "id": 33607,
+   "code": "TOP GIR.A19",
+   "round": 4,
+   "datetime": "2026-11-19T21:15:00",
+   "postponed": false,
+   "home": "VIRTUS BINASCO",
+   "away": "MANTEGAZZA ROGOROTTO",
+   "venue": {
+    "name": "Palestra scuola media Leonardo da Vinci",
+    "address": "Via Dante",
+    "city": "Lacchiarella",
+    "lat": 45.3241709,
+    "lng": 9.1398445
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33600,
+   "code": "TOP GIR.A12",
+   "round": 5,
+   "datetime": "2026-11-27T21:30:00",
+   "postponed": false,
+   "home": "JURASSICI GOLD",
+   "away": "MANTEGAZZA ROGOROTTO",
+   "venue": {
+    "name": "Palestra Comunale",
+    "address": "Via Quasimodo,",
+    "city": "Zibido San Giacomo",
+    "lat": 45.367337,
+    "lng": 9.109895999999999
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33603,
+   "code": "TOP GIR.A15",
+   "round": 6,
+   "datetime": "2026-12-03T21:30:00",
+   "postponed": false,
+   "home": "VOLLEY CUP TEAM",
+   "away": "MANTEGAZZA ROGOROTTO",
+   "venue": {
+    "name": "PALESTRA VIA DEL SOLE",
+    "address": "VIA DEL SOLE",
+    "city": "Assago",
+    "lat": 45.4048573,
+    "lng": 9.1283882
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33597,
+   "code": "TOP GIR.A09",
+   "round": 7,
+   "datetime": "2026-12-13T21:15:00",
+   "postponed": false,
+   "home": "ALVOLLEY ZELIG",
+   "away": "MANTEGAZZA ROGOROTTO",
+   "venue": {
+    "name": "Sc.Me. Paolo Sarpi",
+    "address": "Via Grandi, 12",
+    "city": "Settimo Milanese",
+    "lat": 45.4862308,
+    "lng": 9.055163
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33612,
+   "code": "TOP GIR.A24",
+   "round": 9,
+   "datetime": "2027-01-15T21:30:00",
+   "postponed": false,
+   "home": "MANTEGAZZA ROGOROTTO",
+   "away": "VISCONTINI GIALLA",
+   "venue": {
+    "name": "Palestra Comunale Airaghi",
+    "address": "Via Paolo Ferrario 82",
+    "city": "Vanzago",
+    "lat": 45.5238205,
+    "lng": 8.9878434
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33617,
+   "code": "TOP GIR.A29",
+   "round": 10,
+   "datetime": "2027-01-22T21:30:00",
+   "postponed": false,
+   "home": "MANTEGAZZA ROGOROTTO",
+   "away": "BLACK PANTHERS",
+   "venue": {
+    "name": "Palestra Comunale Airaghi",
+    "address": "Via Paolo Ferrario 82",
+    "city": "Vanzago",
+    "lat": 45.5238205,
+    "lng": 8.9878434
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33618,
+   "code": "TOP GIR.A30",
+   "round": 11,
+   "datetime": "2027-01-29T21:30:00",
+   "postponed": false,
+   "home": "MANTEGAZZA ROGOROTTO",
+   "away": "ALVOLLEY ZELIG",
+   "venue": {
+    "name": "Palestra Comunale Airaghi",
+    "address": "Via Paolo Ferrario 82",
+    "city": "Vanzago",
+    "lat": 45.5238205,
+    "lng": 8.9878434
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33621,
+   "code": "TOP GIR.A33",
+   "round": 12,
+   "datetime": "2027-02-05T21:30:00",
+   "postponed": false,
+   "home": "MANTEGAZZA ROGOROTTO",
+   "away": "JURASSICI GOLD",
+   "venue": {
+    "name": "Palestra Comunale Airaghi",
+    "address": "Via Paolo Ferrario 82",
+    "city": "Vanzago",
+    "lat": 45.5238205,
+    "lng": 8.9878434
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33624,
+   "code": "TOP GIR.A36",
+   "round": 13,
+   "datetime": "2027-02-12T21:30:00",
+   "postponed": false,
+   "home": "MANTEGAZZA ROGOROTTO",
+   "away": "VOLLEY CUP TEAM",
+   "venue": {
+    "name": "Palestra Comunale Airaghi",
+    "address": "Via Paolo Ferrario 82",
+    "city": "Vanzago",
+    "lat": 45.5238205,
+    "lng": 8.9878434
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33628,
+   "code": "TOP GIR.A40",
+   "round": 14,
+   "datetime": "2027-02-19T21:30:00",
+   "postponed": false,
+   "home": "MANTEGAZZA ROGOROTTO",
+   "away": "VIRTUS BINASCO",
+   "venue": {
+    "name": "Palestra Comunale Airaghi",
+    "address": "Via Paolo Ferrario 82",
+    "city": "Vanzago",
+    "lat": 45.5238205,
+    "lng": 8.9878434
+   },
+   "result": null,
+   "sets": []
+  }
+ ],
+ "group_matches": [
+  {
+   "id": 33596,
+   "code": "TOP GIR.A08",
+   "round": 1,
+   "datetime": "2026-10-30T21:15:00",
+   "postponed": false,
+   "home": "BLACK PANTHERS",
+   "away": "MANTEGAZZA ROGOROTTO",
+   "venue": {
+    "name": "Pal. Buccinasco",
+    "address": "Via degli Alpini, 48",
+    "city": "Buccinasco",
+    "lat": 45.4333731,
+    "lng": 9.1220764
+   },
+   "result": [
+    1,
+    3
+   ],
+   "sets": [
+    [
+     23,
+     25
+    ],
+    [
+     21,
+     25
+    ],
+    [
+     25,
+     22
+    ],
+    [
+     23,
+     25
+    ]
+   ]
+  },
+  {
+   "id": 33594,
+   "code": "TOP GIR.A06",
+   "round": 1,
+   "datetime": "2026-10-30T21:30:00",
+   "postponed": false,
+   "home": "JURASSICI GOLD",
+   "away": "VIRTUS BINASCO",
+   "venue": {
+    "name": "Palestra Comunale",
+    "address": "Via Quasimodo,",
+    "city": "Zibido San Giacomo",
+    "lat": 45.367337,
+    "lng": 9.109895999999999
+   },
+   "result": [
+    0,
+    3
+   ],
+   "sets": [
+    [
+     14,
+     25
+    ],
+    [
+     18,
+     25
+    ],
+    [
+     23,
+     25
+    ]
+   ]
+  },
+  {
+   "id": 33593,
+   "code": "TOP GIR.A05",
+   "round": 2,
+   "datetime": "2026-11-05T21:15:00",
+   "postponed": true,
+   "home": "BLACK PANTHERS",
+   "away": "VIRTUS BINASCO",
+   "venue": {
+    "name": "Palestra scuola media Leonardo da Vinci",
+    "address": "Via Dante",
+    "city": "Lacchiarella",
+    "lat": 45.3241709,
+    "lng": 9.1398445
+   },
+   "result": [
+    0,
+    3
+   ],
+   "sets": [
+    [
+     16,
+     25
+    ],
+    [
+     17,
+     25
+    ],
+    [
+     26,
+     28
+    ]
+   ]
+  },
+  {
+   "id": 33592,
+   "code": "TOP GIR.A04",
+   "round": 2,
+   "datetime": "2026-11-05T21:30:00",
+   "postponed": false,
+   "home": "VOLLEY CUP TEAM",
+   "away": "ALVOLLEY ZELIG",
+   "venue": {
+    "name": "PALESTRA VIA DEL SOLE",
+    "address": "VIA DEL SOLE",
+    "city": "Assago",
+    "lat": 45.4048573,
+    "lng": 9.1283882
+   },
+   "result": [
+    3,
+    0
+   ],
+   "sets": [
+    [
+     25,
+     22
+    ],
+    [
+     25,
+     17
+    ],
+    [
+     25,
+     14
+    ]
+   ]
+  },
+  {
+   "id": 33591,
+   "code": "TOP GIR.A03",
+   "round": 2,
+   "datetime": "2026-11-06T21:15:00",
+   "postponed": false,
+   "home": "VISCONTINI GIALLA",
+   "away": "MANTEGAZZA ROGOROTTO",
+   "venue": {
+    "name": "Palestra Comunale",
+    "address": "Via Papa Giovanni XXIII, 6",
+    "city": "Pero",
+    "lat": 45.5117226,
+    "lng": 9.0790097
+   },
+   "result": [
+    3,
+    0
+   ],
+   "sets": [
+    [
+     25,
+     16
+    ],
+    [
+     25,
+     19
+    ],
+    [
+     25,
+     22
+    ]
+   ]
+  },
+  {
+   "id": 33590,
+   "code": "TOP GIR.A02",
+   "round": 3,
+   "datetime": "2026-11-12T21:30:00",
+   "postponed": false,
+   "home": "VOLLEY CUP TEAM",
+   "away": "JURASSICI GOLD",
+   "venue": {
+    "name": "PALESTRA VIA DEL SOLE",
+    "address": "VIA DEL SOLE",
+    "city": "Assago",
+    "lat": 45.4048573,
+    "lng": 9.1283882
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33588,
+   "code": "TOP GIR.A00",
+   "round": 3,
+   "datetime": "2026-11-13T21:15:00",
+   "postponed": false,
+   "home": "VISCONTINI GIALLA",
+   "away": "BLACK PANTHERS",
+   "venue": {
+    "name": "Palestra Comunale",
+    "address": "Via Papa Giovanni XXIII, 6",
+    "city": "Pero",
+    "lat": 45.5117226,
+    "lng": 9.0790097
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33589,
+   "code": "TOP GIR.A01",
+   "round": 3,
+   "datetime": "2026-11-15T21:15:00",
+   "postponed": false,
+   "home": "ALVOLLEY ZELIG",
+   "away": "VIRTUS BINASCO",
+   "venue": {
+    "name": "Sc.Me. Paolo Sarpi",
+    "address": "Via Grandi, 12",
+    "city": "Settimo Milanese",
+    "lat": 45.4862308,
+    "lng": 9.055163
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33608,
+   "code": "TOP GIR.A20",
+   "round": 4,
+   "datetime": "2026-11-16T21:30:00",
+   "postponed": false,
+   "home": "VOLLEY CUP TEAM",
+   "away": "BLACK PANTHERS",
+   "venue": {
+    "name": "PALESTRA VIA DEL SOLE",
+    "address": "VIA DEL SOLE",
+    "city": "Assago",
+    "lat": 45.4048573,
+    "lng": 9.1283882
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33607,
+   "code": "TOP GIR.A19",
+   "round": 4,
+   "datetime": "2026-11-19T21:15:00",
+   "postponed": false,
+   "home": "VIRTUS BINASCO",
+   "away": "MANTEGAZZA ROGOROTTO",
+   "venue": {
+    "name": "Palestra scuola media Leonardo da Vinci",
+    "address": "Via Dante",
+    "city": "Lacchiarella",
+    "lat": 45.3241709,
+    "lng": 9.1398445
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33606,
+   "code": "TOP GIR.A18",
+   "round": 4,
+   "datetime": "2026-11-20T21:30:00",
+   "postponed": false,
+   "home": "JURASSICI GOLD",
+   "away": "ALVOLLEY ZELIG",
+   "venue": {
+    "name": "Palestra Comunale",
+    "address": "Via Quasimodo,",
+    "city": "Zibido San Giacomo",
+    "lat": 45.367337,
+    "lng": 9.109895999999999
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33602,
+   "code": "TOP GIR.A14",
+   "round": 5,
+   "datetime": "2026-11-27T21:15:00",
+   "postponed": false,
+   "home": "VISCONTINI GIALLA",
+   "away": "VOLLEY CUP TEAM",
+   "venue": {
+    "name": "Palestra Comunale",
+    "address": "Via Papa Giovanni XXIII, 6",
+    "city": "Pero",
+    "lat": 45.5117226,
+    "lng": 9.0790097
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33600,
+   "code": "TOP GIR.A12",
+   "round": 5,
+   "datetime": "2026-11-27T21:30:00",
+   "postponed": false,
+   "home": "JURASSICI GOLD",
+   "away": "MANTEGAZZA ROGOROTTO",
+   "venue": {
+    "name": "Palestra Comunale",
+    "address": "Via Quasimodo,",
+    "city": "Zibido San Giacomo",
+    "lat": 45.367337,
+    "lng": 9.109895999999999
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33601,
+   "code": "TOP GIR.A13",
+   "round": 5,
+   "datetime": "2026-11-29T21:15:00",
+   "postponed": false,
+   "home": "ALVOLLEY ZELIG",
+   "away": "BLACK PANTHERS",
+   "venue": {
+    "name": "Sc.Me. Paolo Sarpi",
+    "address": "Via Grandi, 12",
+    "city": "Settimo Milanese",
+    "lat": 45.4862308,
+    "lng": 9.055163
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33603,
+   "code": "TOP GIR.A15",
+   "round": 6,
+   "datetime": "2026-12-03T21:30:00",
+   "postponed": false,
+   "home": "VOLLEY CUP TEAM",
+   "away": "MANTEGAZZA ROGOROTTO",
+   "venue": {
+    "name": "PALESTRA VIA DEL SOLE",
+    "address": "VIA DEL SOLE",
+    "city": "Assago",
+    "lat": 45.4048573,
+    "lng": 9.1283882
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33604,
+   "code": "TOP GIR.A16",
+   "round": 6,
+   "datetime": "2026-12-04T21:15:00",
+   "postponed": false,
+   "home": "VISCONTINI GIALLA",
+   "away": "VIRTUS BINASCO",
+   "venue": {
+    "name": "Palestra Comunale",
+    "address": "Via Papa Giovanni XXIII, 6",
+    "city": "Pero",
+    "lat": 45.5117226,
+    "lng": 9.0790097
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33605,
+   "code": "TOP GIR.A17",
+   "round": 6,
+   "datetime": "2026-12-04T21:15:00",
+   "postponed": false,
+   "home": "BLACK PANTHERS",
+   "away": "JURASSICI GOLD",
+   "venue": {
+    "name": "Pal. Buccinasco",
+    "address": "Via degli Alpini, 48",
+    "city": "Buccinasco",
+    "lat": 45.4333731,
+    "lng": 9.1220764
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33599,
+   "code": "TOP GIR.A11",
+   "round": 7,
+   "datetime": "2026-12-10T21:15:00",
+   "postponed": false,
+   "home": "VIRTUS BINASCO",
+   "away": "VOLLEY CUP TEAM",
+   "venue": {
+    "name": "Palestra scuola media Leonardo da Vinci",
+    "address": "Via Dante",
+    "city": "Lacchiarella",
+    "lat": 45.3241709,
+    "lng": 9.1398445
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33598,
+   "code": "TOP GIR.A10",
+   "round": 7,
+   "datetime": "2026-12-13T21:00:00",
+   "postponed": false,
+   "home": "VISCONTINI GIALLA",
+   "away": "JURASSICI GOLD",
+   "venue": {
+    "name": "Palestra Comunale",
+    "address": "Via Papa Giovanni XXIII, 6",
+    "city": "Pero",
+    "lat": 45.5117226,
+    "lng": 9.0790097
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33597,
+   "code": "TOP GIR.A09",
+   "round": 7,
+   "datetime": "2026-12-13T21:15:00",
+   "postponed": false,
+   "home": "ALVOLLEY ZELIG",
+   "away": "MANTEGAZZA ROGOROTTO",
+   "venue": {
+    "name": "Sc.Me. Paolo Sarpi",
+    "address": "Via Grandi, 12",
+    "city": "Settimo Milanese",
+    "lat": 45.4862308,
+    "lng": 9.055163
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33610,
+   "code": "TOP GIR.A22",
+   "round": 8,
+   "datetime": "2026-12-17T21:15:00",
+   "postponed": false,
+   "home": "VIRTUS BINASCO",
+   "away": "ALVOLLEY ZELIG",
+   "venue": {
+    "name": "Palestra scuola media Leonardo da Vinci",
+    "address": "Via Dante",
+    "city": "Lacchiarella",
+    "lat": 45.3241709,
+    "lng": 9.1398445
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33609,
+   "code": "TOP GIR.A21",
+   "round": 8,
+   "datetime": "2026-12-18T21:15:00",
+   "postponed": false,
+   "home": "BLACK PANTHERS",
+   "away": "VISCONTINI GIALLA",
+   "venue": {
+    "name": "Pal. Buccinasco",
+    "address": "Via degli Alpini, 48",
+    "city": "Buccinasco",
+    "lat": 45.4333731,
+    "lng": 9.1220764
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33611,
+   "code": "TOP GIR.A23",
+   "round": 8,
+   "datetime": "2026-12-18T21:30:00",
+   "postponed": false,
+   "home": "JURASSICI GOLD",
+   "away": "VOLLEY CUP TEAM",
+   "venue": {
+    "name": "Palestra Comunale",
+    "address": "Via Quasimodo,",
+    "city": "Zibido San Giacomo",
+    "lat": 45.367337,
+    "lng": 9.109895999999999
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33613,
+   "code": "TOP GIR.A25",
+   "round": 9,
+   "datetime": "2027-01-10T21:15:00",
+   "postponed": false,
+   "home": "ALVOLLEY ZELIG",
+   "away": "VOLLEY CUP TEAM",
+   "venue": {
+    "name": "Sc.Me. Paolo Sarpi",
+    "address": "Via Grandi, 12",
+    "city": "Settimo Milanese",
+    "lat": 45.4862308,
+    "lng": 9.055163
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33614,
+   "code": "TOP GIR.A26",
+   "round": 9,
+   "datetime": "2027-01-15T21:15:00",
+   "postponed": true,
+   "home": "VIRTUS BINASCO",
+   "away": "BLACK PANTHERS",
+   "venue": {
+    "name": "Pal. Buccinasco",
+    "address": "Via degli Alpini, 48",
+    "city": "Buccinasco",
+    "lat": 45.4333731,
+    "lng": 9.1220764
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33612,
+   "code": "TOP GIR.A24",
+   "round": 9,
+   "datetime": "2027-01-15T21:30:00",
+   "postponed": false,
+   "home": "MANTEGAZZA ROGOROTTO",
+   "away": "VISCONTINI GIALLA",
+   "venue": {
+    "name": "Palestra Comunale Airaghi",
+    "address": "Via Paolo Ferrario 82",
+    "city": "Vanzago",
+    "lat": 45.5238205,
+    "lng": 8.9878434
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33615,
+   "code": "TOP GIR.A27",
+   "round": 10,
+   "datetime": "2027-01-21T21:15:00",
+   "postponed": false,
+   "home": "VIRTUS BINASCO",
+   "away": "JURASSICI GOLD",
+   "venue": {
+    "name": "Palestra scuola media Leonardo da Vinci",
+    "address": "Via Dante",
+    "city": "Lacchiarella",
+    "lat": 45.3241709,
+    "lng": 9.1398445
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33595,
+   "code": "TOP GIR.A07",
+   "round": 10,
+   "datetime": "2027-01-22T21:15:00",
+   "postponed": false,
+   "home": "VISCONTINI GIALLA",
+   "away": "ALVOLLEY ZELIG",
+   "venue": {
+    "name": "Palestra Comunale",
+    "address": "Via Papa Giovanni XXIII, 6",
+    "city": "Pero",
+    "lat": 45.5117226,
+    "lng": 9.0790097
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33617,
+   "code": "TOP GIR.A29",
+   "round": 10,
+   "datetime": "2027-01-22T21:30:00",
+   "postponed": false,
+   "home": "MANTEGAZZA ROGOROTTO",
+   "away": "BLACK PANTHERS",
+   "venue": {
+    "name": "Palestra Comunale Airaghi",
+    "address": "Via Paolo Ferrario 82",
+    "city": "Vanzago",
+    "lat": 45.5238205,
+    "lng": 8.9878434
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33616,
+   "code": "TOP GIR.A28",
+   "round": 10,
+   "datetime": "2027-01-24T21:15:00",
+   "postponed": false,
+   "home": "ALVOLLEY ZELIG",
+   "away": "VISCONTINI GIALLA",
+   "venue": {
+    "name": "Sc.Me. Paolo Sarpi",
+    "address": "Via Grandi, 12",
+    "city": "Settimo Milanese",
+    "lat": 45.4862308,
+    "lng": 9.055163
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33620,
+   "code": "TOP GIR.A32",
+   "round": 11,
+   "datetime": "2027-01-28T21:30:00",
+   "postponed": false,
+   "home": "VOLLEY CUP TEAM",
+   "away": "VIRTUS BINASCO",
+   "venue": {
+    "name": "PALESTRA VIA DEL SOLE",
+    "address": "VIA DEL SOLE",
+    "city": "Assago",
+    "lat": 45.4048573,
+    "lng": 9.1283882
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33619,
+   "code": "TOP GIR.A31",
+   "round": 11,
+   "datetime": "2027-01-29T21:30:00",
+   "postponed": false,
+   "home": "JURASSICI GOLD",
+   "away": "VISCONTINI GIALLA",
+   "venue": {
+    "name": "Palestra Comunale",
+    "address": "Via Quasimodo,",
+    "city": "Zibido San Giacomo",
+    "lat": 45.367337,
+    "lng": 9.109895999999999
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33618,
+   "code": "TOP GIR.A30",
+   "round": 11,
+   "datetime": "2027-01-29T21:30:00",
+   "postponed": false,
+   "home": "MANTEGAZZA ROGOROTTO",
+   "away": "ALVOLLEY ZELIG",
+   "venue": {
+    "name": "Palestra Comunale Airaghi",
+    "address": "Via Paolo Ferrario 82",
+    "city": "Vanzago",
+    "lat": 45.5238205,
+    "lng": 8.9878434
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33623,
+   "code": "TOP GIR.A35",
+   "round": 12,
+   "datetime": "2027-02-04T21:30:00",
+   "postponed": false,
+   "home": "VOLLEY CUP TEAM",
+   "away": "VISCONTINI GIALLA",
+   "venue": {
+    "name": "PALESTRA VIA DEL SOLE",
+    "address": "VIA DEL SOLE",
+    "city": "Assago",
+    "lat": 45.4048573,
+    "lng": 9.1283882
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33622,
+   "code": "TOP GIR.A34",
+   "round": 12,
+   "datetime": "2027-02-05T21:15:00",
+   "postponed": false,
+   "home": "BLACK PANTHERS",
+   "away": "ALVOLLEY ZELIG",
+   "venue": {
+    "name": "Pal. Buccinasco",
+    "address": "Via degli Alpini, 48",
+    "city": "Buccinasco",
+    "lat": 45.4333731,
+    "lng": 9.1220764
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33621,
+   "code": "TOP GIR.A33",
+   "round": 12,
+   "datetime": "2027-02-05T21:30:00",
+   "postponed": false,
+   "home": "MANTEGAZZA ROGOROTTO",
+   "away": "JURASSICI GOLD",
+   "venue": {
+    "name": "Palestra Comunale Airaghi",
+    "address": "Via Paolo Ferrario 82",
+    "city": "Vanzago",
+    "lat": 45.5238205,
+    "lng": 8.9878434
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33625,
+   "code": "TOP GIR.A37",
+   "round": 13,
+   "datetime": "2027-02-11T21:15:00",
+   "postponed": false,
+   "home": "VIRTUS BINASCO",
+   "away": "VISCONTINI GIALLA",
+   "venue": {
+    "name": "Palestra scuola media Leonardo da Vinci",
+    "address": "Via Dante",
+    "city": "Lacchiarella",
+    "lat": 45.3241709,
+    "lng": 9.1398445
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33624,
+   "code": "TOP GIR.A36",
+   "round": 13,
+   "datetime": "2027-02-12T21:30:00",
+   "postponed": false,
+   "home": "MANTEGAZZA ROGOROTTO",
+   "away": "VOLLEY CUP TEAM",
+   "venue": {
+    "name": "Palestra Comunale Airaghi",
+    "address": "Via Paolo Ferrario 82",
+    "city": "Vanzago",
+    "lat": 45.5238205,
+    "lng": 8.9878434
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33626,
+   "code": "TOP GIR.A38",
+   "round": 13,
+   "datetime": "2027-02-12T21:30:00",
+   "postponed": false,
+   "home": "JURASSICI GOLD",
+   "away": "BLACK PANTHERS",
+   "venue": {
+    "name": "Palestra Comunale",
+    "address": "Via Quasimodo,",
+    "city": "Zibido San Giacomo",
+    "lat": 45.367337,
+    "lng": 9.109895999999999
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33629,
+   "code": "TOP GIR.A41",
+   "round": 14,
+   "datetime": "2027-02-19T21:15:00",
+   "postponed": false,
+   "home": "BLACK PANTHERS",
+   "away": "VOLLEY CUP TEAM",
+   "venue": {
+    "name": "Pal. Buccinasco",
+    "address": "Via degli Alpini, 48",
+    "city": "Buccinasco",
+    "lat": 45.4333731,
+    "lng": 9.1220764
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33628,
+   "code": "TOP GIR.A40",
+   "round": 14,
+   "datetime": "2027-02-19T21:30:00",
+   "postponed": false,
+   "home": "MANTEGAZZA ROGOROTTO",
+   "away": "VIRTUS BINASCO",
+   "venue": {
+    "name": "Palestra Comunale Airaghi",
+    "address": "Via Paolo Ferrario 82",
+    "city": "Vanzago",
+    "lat": 45.5238205,
+    "lng": 8.9878434
+   },
+   "result": null,
+   "sets": []
+  },
+  {
+   "id": 33627,
+   "code": "TOP GIR.A39",
+   "round": 14,
+   "datetime": "2027-02-21T21:15:00",
+   "postponed": false,
+   "home": "ALVOLLEY ZELIG",
+   "away": "JURASSICI GOLD",
+   "venue": {
+    "name": "Sc.Me. Paolo Sarpi",
+    "address": "Via Grandi, 12",
+    "city": "Settimo Milanese",
+    "lat": 45.4862308,
+    "lng": 9.055163
+   },
+   "result": null,
+   "sets": []
+  }
+ ],
+ "standings": [
+  {
+   "team": "VIRTUS BINASCO",
+   "played": 2,
+   "won": 2,
+   "lost": 0,
+   "points": 6,
+   "sets_won": 6,
+   "sets_lost": 0,
+   "pts_won": 153,
+   "pts_lost": 114,
+   "form": [
+    "W",
+    "W"
+   ],
+   "pos": 1
+  },
+  {
+   "team": "VOLLEY CUP TEAM",
+   "played": 1,
+   "won": 1,
+   "lost": 0,
+   "points": 3,
+   "sets_won": 3,
+   "sets_lost": 0,
+   "pts_won": 75,
+   "pts_lost": 53,
+   "form": [
+    "W"
+   ],
+   "pos": 2
+  },
+  {
+   "team": "VISCONTINI GIALLA",
+   "played": 1,
+   "won": 1,
+   "lost": 0,
+   "points": 3,
+   "sets_won": 3,
+   "sets_lost": 0,
+   "pts_won": 75,
+   "pts_lost": 57,
+   "form": [
+    "W"
+   ],
+   "pos": 3
+  },
+  {
+   "team": "MANTEGAZZA ROGOROTTO",
+   "played": 2,
+   "won": 1,
+   "lost": 1,
+   "points": 3,
+   "sets_won": 3,
+   "sets_lost": 4,
+   "pts_won": 154,
+   "pts_lost": 167,
+   "form": [
+    "W",
+    "L"
+   ],
+   "pos": 4
+  },
+  {
+   "team": "BLACK PANTHERS",
+   "played": 2,
+   "won": 0,
+   "lost": 2,
+   "points": 0,
+   "sets_won": 1,
+   "sets_lost": 6,
+   "pts_won": 151,
+   "pts_lost": 175,
+   "form": [
+    "L",
+    "L"
+   ],
+   "pos": 5
+  },
+  {
+   "team": "JURASSICI GOLD",
+   "played": 1,
+   "won": 0,
+   "lost": 1,
+   "points": 0,
+   "sets_won": 0,
+   "sets_lost": 3,
+   "pts_won": 55,
+   "pts_lost": 75,
+   "form": [
+    "L"
+   ],
+   "pos": 6
+  },
+  {
+   "team": "ALVOLLEY ZELIG",
+   "played": 1,
+   "won": 0,
+   "lost": 1,
+   "points": 0,
+   "sets_won": 0,
+   "sets_lost": 3,
+   "pts_won": 53,
+   "pts_lost": 75,
+   "form": [
+    "L"
+   ],
+   "pos": 7
+  }
+ ],
+ "updated_at": "2026-11-09T20:10:08+00:00"
+}
