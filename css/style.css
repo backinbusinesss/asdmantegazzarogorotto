@@ -410,6 +410,9 @@ h1, h2, h3 { text-wrap: balance; }
 .footer__brand span { color: rgba(255,255,255,.6); font-weight: 400; }
 .footer__data { margin: 0; text-align: right; }
 .footer a { color: var(--teal); }
+.footer__credits { display: flex; justify-content: center; padding-block: 14px 20px; border-top: 1px solid rgba(255,255,255,.08); }
+.footer__credits a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 8px; color: rgba(255,255,255,.7); font-size: .88rem; text-decoration: underline; text-decoration-color: rgba(255,255,255,.3); text-underline-offset: 4px; }
+.footer__credits a:hover { color: var(--teal); text-decoration-color: var(--teal); }
 
 /* ---------- toast ---------- */
 .toast {
