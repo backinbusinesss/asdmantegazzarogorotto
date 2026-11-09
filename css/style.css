@@ -122,6 +122,7 @@ h1, h2, h3 { text-wrap: balance; }
   gap: clamp(32px, 5vw, 72px); align-items: center;
   padding-block: clamp(48px, 8vw, 96px) clamp(48px, 7vw, 88px);
 }
+.hero__logo { display: block; width: clamp(104px, 12vw, 150px); height: auto; margin-bottom: 22px; filter: drop-shadow(0 14px 24px rgba(0,0,0,.45)); }
 .hero__league {
   display: inline-flex; align-items: center; gap: 8px; margin: 0 0 20px;
   font-weight: 700; font-size: .95rem; color: var(--teal);
