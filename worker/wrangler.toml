@@ -8,6 +8,10 @@ GITHUB_REPO = "backinbusinesss/asdmantegazzarogorotto"
 GITHUB_BRANCH = "main"
 ALLOWED_ORIGINS = "https://asdmantegazzarogorotto.it,https://www.asdmantegazzarogorotto.it,https://backinbusinesss.github.io,http://localhost:8765"
 
+# ogni 30 minuti avvia l'aggiornamento di calendario e risultati
+[triggers]
+crons = ["*/30 * * * *"]
+
 # massimo 8 tentativi di login al minuto per indirizzo IP
 [[ratelimits]]
 name = "LOGIN_LIMITER"

@@ -537,6 +537,9 @@
   const hero = document.querySelector(".hero");
   new IntersectionObserver(([en]) => { if (en.isIntersecting) markNav(null); }, { rootMargin: "-45% 0px -50% 0px" }).observe(hero);
 
+  const year = $("year");
+  if (year) year.textContent = new Date().getFullYear();
+
   setupFollow();
   load();
   setInterval(load, REFRESH_MS);

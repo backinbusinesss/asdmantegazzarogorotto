@@ -2,6 +2,8 @@
 <html lang="it">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Mantegazza Rogorotto | Pallavolo mista a Vanzago</title>
   <meta name="description" content="ASD Mantegazza Rogorotto, pallavolo mista di Vanzago (MI). Prossima partita, calendario, risultati e classifica del campionato Volley Cup Top misto, aggiornati dai dati ufficiali.">
@@ -22,12 +24,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Big+Shoulders+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=8">
+  <link rel="stylesheet" href="css/style.css?v=9">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SportsTeam",
     "name": "ASD Mantegazza Rogorotto",
+    "legalName": "A.S.D. Mantegazza Rogorotto",
+    "taxID": "93550360155",
+    "address": { "@type": "PostalAddress", "streetAddress": "Via Tiziano 8", "postalCode": "20010", "addressLocality": "Vanzago", "addressRegion": "MI", "addressCountry": "IT" },
     "sport": "Pallavolo",
     "logo": "https://asdmantegazzarogorotto.it/assets/logo-1024.png?v=2",
     "email": "asdmantegazzarogorotto@gmail.com",
@@ -317,12 +322,14 @@
       <p class="footer__data">Calendario e risultati dal portale ufficiale <a href="https://www.volleycup.it/" target="_blank" rel="noopener">Volley Cup</a>.<br><span id="updated"></span></p>
     </div>
     <div class="wrap footer__credits">
+      <p class="footer__legal">&copy; <span id="year">2026</span> A.S.D. Mantegazza Rogorotto. Tutti i diritti riservati.<br>
+        Associazione sportiva dilettantistica senza fini di lucro &middot; Sede legale: Via Tiziano 8, 20010 Vanzago (MI) &middot; C.F. 93550360155</p>
       <a href="https://carlhost.com/websites" target="_blank" rel="noopener">Credits: CarlHost</a>
     </div>
   </footer>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="js/main.js?v=7" defer></script>
+  <script src="js/main.js?v=8" defer></script>
 </body>
 </html>

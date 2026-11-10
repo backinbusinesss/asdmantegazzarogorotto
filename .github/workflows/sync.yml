@@ -5,6 +5,9 @@ on:
     # ogni 30 minuti (orari UTC; GitHub può ritardare di qualche minuto)
     - cron: "*/30 * * * *"
   workflow_dispatch:
+  # avviato ogni 30 minuti dal Worker Cloudflare (il cron qui sopra resta come riserva)
+  repository_dispatch:
+    types: [sync]
 
 permissions:
   contents: write

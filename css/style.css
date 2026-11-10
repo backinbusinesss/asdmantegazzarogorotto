@@ -411,7 +411,8 @@ h1, h2, h3 { text-wrap: balance; }
 .footer__brand span { color: rgba(255,255,255,.6); font-weight: 400; }
 .footer__data { margin: 0; text-align: right; }
 .footer a { color: var(--teal); }
-.footer__credits { display: flex; justify-content: center; padding-block: 14px 20px; border-top: 1px solid rgba(255,255,255,.08); }
+.footer__credits { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px 24px; padding-block: 16px 20px; border-top: 1px solid rgba(255,255,255,.08); }
+.footer__legal { margin: 0; color: rgba(255,255,255,.6); font-size: .82rem; line-height: 1.6; }
 .footer__credits a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 8px; color: rgba(255,255,255,.7); font-size: .88rem; text-decoration: underline; text-decoration-color: rgba(255,255,255,.3); text-underline-offset: 4px; }
 .footer__credits a:hover { color: var(--teal); text-decoration-color: var(--teal); }
 
@@ -566,3 +567,9 @@ h1, h2, h3 { text-wrap: balance; }
   .people li { grid-template-columns: 1fr; gap: 2px; }
 }
 .roster__grid .player { align-content: start; }
+
+/* ---------- pagina 404 ---------- */
+.notfound { min-height: 100vh; display: grid; place-items: center; padding: 24px 16px; background: radial-gradient(800px 420px at 50% 0, rgba(0, 212, 170, .16), transparent 60%), var(--navy); color: #fff; text-align: center; }
+.notfound__box { display: grid; justify-items: center; gap: 14px; max-width: 420px; }
+.notfound h1 { margin: 6px 0 0; font: 900 clamp(2.6rem, 10vw, 4rem)/1 var(--display); text-transform: uppercase; }
+.notfound p { margin: 0 0 10px; color: rgba(255,255,255,.75); }

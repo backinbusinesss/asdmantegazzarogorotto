@@ -20,8 +20,18 @@ const MAX_UPLOAD_BYTES = 4 * 1024 * 1024;
 const MAX_JSON_BYTES = 200 * 1024;
 const SESSION_HOURS = 24 * 7;
 const enc = new TextEncoder();
+// autore dei commit fatti dall'admin: indirizzo noreply di GitHub, così nessuna email personale finisce nel repository pubblico
+const COMMIT_AUTHOR = { name: "Admin sito", email: "205193201+backinbusinesss@users.noreply.github.com" };
+const CLUB_KEYS = ["email", "instagram", "facebook", "home_gym_name", "home_gym_address", "training", "seat", "invite"];
+const MAGIC = { jpg: [0xff, 0xd8, 0xff], png: [0x89, 0x50, 0x4e, 0x47], webp: [0x52, 0x49, 0x46, 0x46] };
 
 export default {
+  // ogni 30 minuti avvia l'aggiornamento di calendario e risultati su GitHub
+  // (il cron di GitHub Actions da solo parte con molte ore di ritardo)
+  async scheduled(event, env, ctx) {
+    ctx.waitUntil(triggerSync(env));
+  },
+
   async fetch(request, env) {
     const origin = request.headers.get("Origin") || "";
     const allowed = (env.ALLOWED_ORIGINS || "").split(",").map((s) => s.trim()).filter(Boolean);
@@ -74,12 +84,16 @@ export default {
         const { name, type, data } = await request.json();
         const ext = { "image/jpeg": "jpg", "image/png": "png", "image/webp": "webp" }[type];
         if (!ext) return json({ error: "Formato non supportato: usa JPG, PNG o WebP." }, 400);
-        const bytes = Math.floor((String(data).length * 3) / 4);
+        const b64 = String(data || "");
+        if (!/^[A-Za-z0-9+/]+={0,2}$/.test(b64)) return json({ error: "File immagine non valido." }, 400);
+        const bytes = Math.floor((b64.length * 3) / 4);
         if (bytes > MAX_UPLOAD_BYTES) return json({ error: "Immagine troppo grande (massimo 4 MB)." }, 413);
+        const head = Uint8Array.from(atob(b64.slice(0, 16)), (c) => c.charCodeAt(0));
+        if (!MAGIC[ext].every((b, i) => head[i] === b)) return json({ error: "Il file non è un'immagine valida." }, 400);
         const slug = String(name || "foto").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "")
           .replace(/\.[a-z0-9]+$/, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 40) || "foto";
         const path = `${UPLOAD_DIR}${new Date().toISOString().slice(0, 10)}-${slug}-${crypto.randomUUID().slice(0, 6)}.${ext}`;
-        await ghPut(env, path, String(data), `Admin (${user}): carica ${path}`);
+        await ghPut(env, path, b64, `Admin (${user}): carica ${path}`);
         return json({ ok: true, path });
       }
 
@@ -130,7 +144,8 @@ async function auth(request, env) {
   if (!payload || !sig) return null;
   const expected = await hmac(env.SESSION_SECRET, payload);
   if (!timingSafeEqual(sig, expected)) return null;
-  const { u, exp } = JSON.parse(new TextDecoder().decode(fromB64url(payload)));
+  let u, exp;
+  try { ({ u, exp } = JSON.parse(new TextDecoder().decode(fromB64url(payload)))); } catch { return null; }
   if (!u || Date.now() > exp) return null;
   const users = JSON.parse(env.ADMIN_USERS || "{}");
   return users[u] ? u : null; // utente rimosso = sessione non più valida
@@ -187,7 +202,8 @@ function validate(kind, d) {
     }
   } else if (kind === "club") {
     if (typeof d !== "object" || Array.isArray(d)) return "Contatti non validi.";
-    for (const k of ["email", "instagram", "facebook", "home_gym_name", "home_gym_address", "training", "seat", "invite"]) {
+    if (Object.keys(d).some((k) => !CLUB_KEYS.includes(k))) return "Campo sconosciuto nei contatti.";
+    for (const k of CLUB_KEYS) {
       if (!isOptStr(d[k], 600)) return `Campo ${k} non valido.`;
     }
     if (d.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) return "Indirizzo email non valido.";
@@ -224,7 +240,7 @@ async function ghPut(env, path, contentB64, message) {
     const current = await ghGet(env, path);
     const res = await gh(env, path, {
       method: "PUT",
-      body: JSON.stringify({ message, content: contentB64, branch: env.GITHUB_BRANCH || "main", ...(current ? { sha: current.sha } : {}) }),
+      body: JSON.stringify({ message, content: contentB64, branch: env.GITHUB_BRANCH || "main", author: COMMIT_AUTHOR, committer: COMMIT_AUTHOR, ...(current ? { sha: current.sha } : {}) }),
     });
     if (res.ok) return;
     if (res.status !== 409 && res.status !== 422) {
@@ -235,8 +251,22 @@ async function ghPut(env, path, contentB64, message) {
 }
 
 async function ghDelete(env, path, sha, message) {
-  const res = await gh(env, path, { method: "DELETE", body: JSON.stringify({ message, sha, branch: env.GITHUB_BRANCH || "main" }) });
+  const res = await gh(env, path, { method: "DELETE", body: JSON.stringify({ message, sha, branch: env.GITHUB_BRANCH || "main", author: COMMIT_AUTHOR, committer: COMMIT_AUTHOR }) });
   if (!res.ok && res.status !== 404) throw Object.assign(new Error(`GitHub DELETE ${res.status}`), { publicMessage: "Eliminazione non riuscita." });
+}
+
+async function triggerSync(env) {
+  const res = await fetch(`https://api.github.com/repos/${env.GITHUB_REPO}/dispatches`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${env.GITHUB_TOKEN}`,
+      Accept: "application/vnd.github+json",
+      "User-Agent": "mr-admin-worker",
+      "X-GitHub-Api-Version": "2022-11-28",
+    },
+    body: JSON.stringify({ event_type: "sync" }),
+  });
+  if (!res.ok) console.error(`Avvio aggiornamento non riuscito: ${res.status} ${await res.text()}`);
 }
 
 /* ---------------- base64 ---------------- */

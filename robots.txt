@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /worker/
+Disallow: /scripts/
+
+Sitemap: https://asdmantegazzarogorotto.it/sitemap.xml
