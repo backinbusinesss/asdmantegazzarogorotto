@@ -106,8 +106,8 @@
  {
   "name": "Antonio Maiorano",
   "number": null,
-  "role": "Presidente",
-  "club_role": "",
+  "role": "",
+  "club_role": "Presidente",
   "captain": false,
   "photo": ""
  },
