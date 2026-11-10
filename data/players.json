@@ -11,7 +11,7 @@
   "name": "Aurora Lucia Carini",
   "number": 14,
   "role": "",
-  "club_role": "Consigliere",
+  "club_role": "",
   "captain": false,
   "photo": ""
  },
@@ -27,7 +27,7 @@
   "name": "Andrea Cornetti",
   "number": 20,
   "role": "",
-  "club_role": "Consigliere",
+  "club_role": "",
   "captain": false,
   "photo": ""
  },
@@ -43,7 +43,7 @@
   "name": "Alessandro De Melis",
   "number": 25,
   "role": "",
-  "club_role": "Presidente",
+  "club_role": "",
   "captain": false,
   "photo": ""
  },
@@ -51,7 +51,7 @@
   "name": "Flavio Ferioli",
   "number": null,
   "role": "Dirigente",
-  "club_role": "Consigliere",
+  "club_role": "",
   "captain": false,
   "photo": ""
  },
@@ -59,7 +59,7 @@
   "name": "Cristina Govi",
   "number": 12,
   "role": "",
-  "club_role": "Vicepresidente",
+  "club_role": "",
   "captain": false,
   "photo": ""
  },
@@ -83,7 +83,7 @@
   "name": "Laura Lovati",
   "number": 5,
   "role": "",
-  "club_role": "",
+  "club_role": "Consigliere",
   "captain": false,
   "photo": ""
  },
@@ -91,7 +91,7 @@
   "name": "Andrea Maggioni",
   "number": 6,
   "role": "",
-  "club_role": "",
+  "club_role": "Consigliere",
   "captain": false,
   "photo": ""
  },
@@ -123,7 +123,7 @@
   "name": "Federica Nova",
   "number": 8,
   "role": "",
-  "club_role": "",
+  "club_role": "Consigliere",
   "captain": false,
   "photo": ""
  },
@@ -131,7 +131,7 @@
   "name": "Massimo Pavin",
   "number": 68,
   "role": "",
-  "club_role": "",
+  "club_role": "Vicepresidente",
   "captain": false,
   "photo": ""
  },
