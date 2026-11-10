@@ -548,3 +548,21 @@ h1, h2, h3 { text-wrap: balance; }
   .lightbox__prev { left: calc(50% - 64px); }
   .lightbox__next { right: calc(50% - 64px); }
 }
+
+/* ---------- squadra: giocatori, staff, società ---------- */
+.roster__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 12px; }
+.player__club { justify-self: start; margin-top: 6px; padding: 2px 8px; border-radius: 999px; background: rgba(0, 212, 170, .14); color: var(--teal-ink); font-size: .78rem; font-weight: 700; }
+.people { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 32px; }
+.people__col { background: var(--navy); color: #fff; border-radius: var(--r-lg); padding: 24px 26px; }
+.people__col h3 { margin: 0 0 12px; font: 900 1.7rem/1 var(--display); text-transform: uppercase; color: var(--teal); }
+.people ul { list-style: none; margin: 0; padding: 0; }
+.people li { display: grid; grid-template-columns: 130px 1fr; gap: 12px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.12); }
+.people li:last-child { border-bottom: 0; }
+.people__role { color: var(--gold); font-weight: 700; font-size: .92rem; }
+.people__name { font-weight: 700; }
+.people__name small { color: rgba(255,255,255,.6); font-weight: 400; margin-left: 4px; }
+@media (max-width: 720px) {
+  .roster__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .people li { grid-template-columns: 1fr; gap: 2px; }
+}
+.roster__grid .player { align-content: start; }

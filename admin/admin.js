@@ -286,7 +286,8 @@
 
   /* ---------- rosa ---------- */
   const TRASH = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M10 11v6M14 11v6M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2l1-12M9 7V4h6v3"/></svg>`;
-  const ROLES = ["", "Palleggiatore", "Palleggiatrice", "Schiacciatore", "Schiacciatrice", "Opposto", "Centrale", "Libero", "Allenatore", "Allenatrice"];
+  const ROLES = ["", "Palleggiatore", "Palleggiatrice", "Schiacciatore", "Schiacciatrice", "Opposto", "Centrale", "Libero", "Allenatore", "Allenatrice", "Dirigente", "Presidente"];
+  const CLUB_ROLES = ["", "Presidente", "Vicepresidente", "Segretario", "Tesoriere", "Consigliere"];
 
   function renderPlayers() {
     const list = $("playersList");
@@ -300,6 +301,9 @@
         <label class="field f-role"><span>Ruolo</span>
           <select data-k="role">${ROLES.map((r) => `<option value="${r}" ${r === (p.role || "") ? "selected" : ""}>${r || "Nessun ruolo"}</option>`).join("")}
             ${p.role && !ROLES.includes(p.role) ? `<option selected>${esc(p.role)}</option>` : ""}</select></label>
+        <label class="field f-club"><span>Carica nella società</span>
+          <select data-k="club_role">${CLUB_ROLES.map((r) => `<option value="${r}" ${r === (p.club_role || "") ? "selected" : ""}>${r || "Nessuna"}</option>`).join("")}
+            ${p.club_role && !CLUB_ROLES.includes(p.club_role) ? `<option selected>${esc(p.club_role)}</option>` : ""}</select></label>
         <label class="check"><input type="checkbox" data-k="captain" ${p.captain ? "checked" : ""}>Capitano</label>
         <button type="button" class="row__remove" aria-label="Rimuovi ${esc(p.name || "giocatore")}">${TRASH}</button>
       </li>`).join("");
@@ -332,7 +336,7 @@
   }
 
   $("addPlayer").addEventListener("click", () => {
-    state.data.players.push({ _id: uid(), name: "", number: null, role: "", captain: false, photo: "" });
+    state.data.players.push({ _id: uid(), name: "", number: null, role: "", club_role: "", captain: false, photo: "" });
     renderPlayers();
     updateSaveBar();
     const rows = $("playersList").querySelectorAll(".row");

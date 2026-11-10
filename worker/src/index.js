@@ -170,7 +170,7 @@ function validate(kind, d) {
     for (const p of d) {
       if (!isStr(p.name, 80) || !p.name.trim()) return "Ogni giocatore deve avere un nome.";
       if (p.number !== null && p.number !== undefined && p.number !== "" && !(Number.isInteger(p.number) && p.number >= 0 && p.number <= 99)) return `Numero non valido per ${p.name}.`;
-      if (!isOptStr(p.role, 40) || !isImg(p.photo)) return `Dati non validi per ${p.name}.`;
+      if (!isOptStr(p.role, 40) || !isOptStr(p.club_role, 40) || !isImg(p.photo)) return `Dati non validi per ${p.name}.`;
     }
   } else if (kind === "news") {
     if (!Array.isArray(d) || d.length > 200) return "News non valide.";

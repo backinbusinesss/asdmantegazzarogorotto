@@ -366,8 +366,11 @@
 
   function renderRoster() {
     const box = $("roster");
-    const players = state.players.slice().sort((a, b) => (a.number ?? 99) - (b.number ?? 99));
-    if (!players.length) {
+    const all = state.players.filter((p) => p && p.name);
+    const players = all.filter((p) => Number.isInteger(p.number)).sort((a, b) => a.number - b.number);
+    const staff = all.filter((p) => !Number.isInteger(p.number) && p.role);
+    const board = all.filter((p) => p.club_role);
+    if (!all.length) {
       box.innerHTML = `<div class="roster-empty">
         <div class="roster-empty__shirts">${SHIRT.repeat(4)}</div>
         <div>
@@ -378,15 +381,33 @@
       </div>`;
       return;
     }
-    box.innerHTML = players.map((p) => `
-      <article class="player ${safeImg(p.photo) ? "player--photo" : ""}">
-        ${safeImg(p.photo) ? `<img class="player__photo" src="${esc(p.photo)}" alt="" loading="lazy">` : ""}
-        <span class="player__num">${esc(p.number ?? "")}</span>
-        <span class="player__name">${esc(p.name)}</span>
-        <span class="player__role">${esc(p.role || "")}</span>
-        ${p.captain ? `<span class="player__cap" title="Capitano" aria-label="Capitano">C</span>` : ""}
-      </article>`).join("");
+    const staffOrder = (r) => ({ Allenatore: 0, Allenatrice: 0, Presidente: 1, Dirigente: 2 }[r] ?? 3);
+    const boardOrder = (r) => ({ Presidente: 0, Vicepresidente: 1, "Vice Presidente": 1, Segretario: 2, Tesoriere: 3, Consigliere: 4 }[r] ?? 5);
+    const person = (p, label) => `<li><span class="people__role">${esc(label)}</span><span class="people__name">${esc(p.name)}${Number.isInteger(p.number) ? ` <small>n. ${p.number}</small>` : ""}</span></li>`;
+
+    box.innerHTML = `
+      <div class="roster__grid">${players.map((p) => `
+        <article class="player ${safeImg(p.photo) ? "player--photo" : ""}">
+          ${safeImg(p.photo) ? `<img class="player__photo" src="${esc(p.photo)}" alt="" loading="lazy">` : ""}
+          <span class="player__num">${p.number}</span>
+          <span class="player__name">${esc(p.name)}</span>
+          ${p.role ? `<span class="player__role">${esc(p.role)}</span>` : ""}
+          ${p.club_role ? `<span class="player__club">${esc(p.club_role)}</span>` : ""}
+          ${p.captain ? `<span class="player__cap" title="Capitano" aria-label="Capitano">C</span>` : ""}
+        </article>`).join("")}
+      </div>
+      <div class="people">
+        ${staff.length ? `<section class="people__col" aria-labelledby="staff-title">
+          <h3 id="staff-title">Staff</h3>
+          <ul>${staff.sort((a, b) => staffOrder(a.role) - staffOrder(b.role) || a.name.localeCompare(b.name)).map((p) => person(p, p.role)).join("")}</ul>
+        </section>` : ""}
+        ${board.length ? `<section class="people__col" aria-labelledby="board-title">
+          <h3 id="board-title">Consiglio direttivo</h3>
+          <ul>${board.sort((a, b) => boardOrder(a.club_role) - boardOrder(b.club_role) || a.name.localeCompare(b.name)).map((p) => person(p, p.club_role)).join("")}</ul>
+        </section>` : ""}
+      </div>`;
   }
+
 
   /* ---------- news ---------- */
   const fmtNewsDate = new Intl.DateTimeFormat("it-IT", { day: "numeric", month: "long", year: "numeric" });

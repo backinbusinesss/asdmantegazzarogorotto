@@ -1,1 +1,202 @@
-[]
+[
+ {
+  "name": "Giulia Caccia",
+  "number": 29,
+  "role": "",
+  "club_role": "",
+  "captain": false,
+  "photo": ""
+ },
+ {
+  "name": "Aurora Lucia Carini",
+  "number": 14,
+  "role": "",
+  "club_role": "Consigliere",
+  "captain": false,
+  "photo": ""
+ },
+ {
+  "name": "Francesca Cattaneo",
+  "number": 9,
+  "role": "",
+  "club_role": "",
+  "captain": false,
+  "photo": ""
+ },
+ {
+  "name": "Andrea Cornetti",
+  "number": 20,
+  "role": "",
+  "club_role": "Consigliere",
+  "captain": false,
+  "photo": ""
+ },
+ {
+  "name": "Emanuele Crovato",
+  "number": 22,
+  "role": "",
+  "club_role": "Consigliere",
+  "captain": false,
+  "photo": ""
+ },
+ {
+  "name": "Alessandro De Melis",
+  "number": 25,
+  "role": "",
+  "club_role": "Presidente",
+  "captain": false,
+  "photo": ""
+ },
+ {
+  "name": "Flavio Ferioli",
+  "number": null,
+  "role": "Dirigente",
+  "club_role": "Consigliere",
+  "captain": false,
+  "photo": ""
+ },
+ {
+  "name": "Cristina Govi",
+  "number": 12,
+  "role": "",
+  "club_role": "Vicepresidente",
+  "captain": false,
+  "photo": ""
+ },
+ {
+  "name": "Jessica Gullone",
+  "number": 3,
+  "role": "",
+  "club_role": "",
+  "captain": false,
+  "photo": ""
+ },
+ {
+  "name": "Gianpaolo Lombardi",
+  "number": null,
+  "role": "Allenatore",
+  "club_role": "",
+  "captain": false,
+  "photo": ""
+ },
+ {
+  "name": "Laura Lovati",
+  "number": 5,
+  "role": "",
+  "club_role": "",
+  "captain": false,
+  "photo": ""
+ },
+ {
+  "name": "Andrea Maggioni",
+  "number": 6,
+  "role": "",
+  "club_role": "",
+  "captain": false,
+  "photo": ""
+ },
+ {
+  "name": "Matteo Maria Magistrelli",
+  "number": null,
+  "role": "Dirigente",
+  "club_role": "",
+  "captain": false,
+  "photo": ""
+ },
+ {
+  "name": "Antonio Maiorano",
+  "number": null,
+  "role": "Presidente",
+  "club_role": "",
+  "captain": false,
+  "photo": ""
+ },
+ {
+  "name": "Marco Malacalza",
+  "number": 4,
+  "role": "",
+  "club_role": "",
+  "captain": false,
+  "photo": ""
+ },
+ {
+  "name": "Federica Nova",
+  "number": 8,
+  "role": "",
+  "club_role": "",
+  "captain": false,
+  "photo": ""
+ },
+ {
+  "name": "Massimo Pavin",
+  "number": 68,
+  "role": "",
+  "club_role": "",
+  "captain": false,
+  "photo": ""
+ },
+ {
+  "name": "Enrico Sartorio",
+  "number": 30,
+  "role": "",
+  "club_role": "",
+  "captain": false,
+  "photo": ""
+ },
+ {
+  "name": "Marta Monica Tizzoni",
+  "number": null,
+  "role": "Dirigente",
+  "club_role": "",
+  "captain": false,
+  "photo": ""
+ },
+ {
+  "name": "Elisa Zanaletti",
+  "number": 18,
+  "role": "",
+  "club_role": "",
+  "captain": false,
+  "photo": ""
+ },
+ {
+  "name": "Martina Gaia Giuffrida",
+  "number": 16,
+  "role": "",
+  "club_role": "",
+  "captain": false,
+  "photo": ""
+ },
+ {
+  "name": "Agostino Niyonkuru Meroni",
+  "number": 11,
+  "role": "",
+  "club_role": "",
+  "captain": false,
+  "photo": ""
+ },
+ {
+  "name": "Serena Morelli",
+  "number": 13,
+  "role": "",
+  "club_role": "",
+  "captain": false,
+  "photo": ""
+ },
+ {
+  "name": "Sara Lucia Patruno",
+  "number": 35,
+  "role": "",
+  "club_role": "",
+  "captain": false,
+  "photo": ""
+ },
+ {
+  "name": "Davide Rubes",
+  "number": 15,
+  "role": "",
+  "club_role": "",
+  "captain": false,
+  "photo": ""
+ }
+]
