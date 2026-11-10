@@ -6,7 +6,7 @@ workers_dev = true
 [vars]
 GITHUB_REPO = "backinbusinesss/asdmantegazzarogorotto"
 GITHUB_BRANCH = "main"
-ALLOWED_ORIGINS = "https://backinbusinesss.github.io,http://localhost:8765"
+ALLOWED_ORIGINS = "https://asdmantegazzarogorotto.it,https://www.asdmantegazzarogorotto.it,https://backinbusinesss.github.io,http://localhost:8765"
 
 # massimo 8 tentativi di login al minuto per indirizzo IP
 [[ratelimits]]

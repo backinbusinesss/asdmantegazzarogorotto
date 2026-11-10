@@ -49,7 +49,7 @@ Poi apri http://localhost:8765.
 
 ## Area admin
 
-Pannello su **`/admin`** (es. https://backinbusinesss.github.io/asdmantegazzarogorotto/admin/): si entra con utente e password
+Pannello su **`/admin`** (es. https://asdmantegazzarogorotto.it/admin/): si entra con utente e password
 e si gestiscono **rosa, news, foto e contatti**. Al salvataggio il sito si aggiorna in circa un minuto.
 
 Come funziona: il pannello parla con un piccolo server su Cloudflare Workers (`worker/`), che controlla la password
