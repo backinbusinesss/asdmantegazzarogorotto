@@ -489,8 +489,28 @@
     "lat": 45.5117226,
     "lng": 9.0790097
    },
-   "result": null,
-   "sets": []
+   "result": [
+    1,
+    3
+   ],
+   "sets": [
+    [
+     20,
+     25
+    ],
+    [
+     25,
+     22
+    ],
+    [
+     27,
+     29
+    ],
+    [
+     21,
+     25
+    ]
+   ]
   },
   {
    "id": 33589,
@@ -1158,16 +1178,17 @@
   },
   {
    "team": "VISCONTINI GIALLA",
-   "played": 1,
+   "played": 2,
    "won": 1,
-   "lost": 0,
+   "lost": 1,
    "points": 3,
-   "sets_won": 3,
-   "sets_lost": 0,
-   "pts_won": 75,
-   "pts_lost": 57,
+   "sets_won": 4,
+   "sets_lost": 3,
+   "pts_won": 168,
+   "pts_lost": 158,
    "form": [
-    "W"
+    "W",
+    "L"
    ],
    "pos": 3
   },
@@ -1188,6 +1209,23 @@
    "pos": 4
   },
   {
+   "team": "BLACK PANTHERS",
+   "played": 3,
+   "won": 1,
+   "lost": 2,
+   "points": 3,
+   "sets_won": 4,
+   "sets_lost": 7,
+   "pts_won": 252,
+   "pts_lost": 268,
+   "form": [
+    "L",
+    "L",
+    "W"
+   ],
+   "pos": 5
+  },
+  {
    "team": "JURASSICI GOLD",
    "played": 2,
    "won": 0,
@@ -1197,22 +1235,6 @@
    "sets_lost": 6,
    "pts_won": 169,
    "pts_lost": 190,
-   "form": [
-    "L",
-    "L"
-   ],
-   "pos": 5
-  },
-  {
-   "team": "BLACK PANTHERS",
-   "played": 2,
-   "won": 0,
-   "lost": 2,
-   "points": 0,
-   "sets_won": 1,
-   "sets_lost": 6,
-   "pts_won": 151,
-   "pts_lost": 175,
    "form": [
     "L",
     "L"
@@ -1235,5 +1257,5 @@
    "pos": 7
   }
  ],
- "updated_at": "2026-11-13T07:30:56+00:00"
+ "updated_at": "2026-11-13T23:00:56+00:00"
 }
