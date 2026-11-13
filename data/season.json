@@ -447,8 +447,32 @@
     "lat": 45.4048573,
     "lng": 9.1283882
    },
-   "result": null,
-   "sets": []
+   "result": [
+    3,
+    2
+   ],
+   "sets": [
+    [
+     31,
+     29
+    ],
+    [
+     24,
+     26
+    ],
+    [
+     20,
+     25
+    ],
+    [
+     25,
+     23
+    ],
+    [
+     15,
+     11
+    ]
+   ]
   },
   {
    "id": 33588,
@@ -1118,15 +1142,16 @@
   },
   {
    "team": "VOLLEY CUP TEAM",
-   "played": 1,
-   "won": 1,
+   "played": 2,
+   "won": 2,
    "lost": 0,
-   "points": 3,
-   "sets_won": 3,
-   "sets_lost": 0,
-   "pts_won": 75,
-   "pts_lost": 53,
+   "points": 5,
+   "sets_won": 6,
+   "sets_lost": 2,
+   "pts_won": 190,
+   "pts_lost": 167,
    "form": [
+    "W",
     "W"
    ],
    "pos": 2
@@ -1163,6 +1188,22 @@
    "pos": 4
   },
   {
+   "team": "JURASSICI GOLD",
+   "played": 2,
+   "won": 0,
+   "lost": 2,
+   "points": 1,
+   "sets_won": 2,
+   "sets_lost": 6,
+   "pts_won": 169,
+   "pts_lost": 190,
+   "form": [
+    "L",
+    "L"
+   ],
+   "pos": 5
+  },
+  {
    "team": "BLACK PANTHERS",
    "played": 2,
    "won": 0,
@@ -1174,21 +1215,6 @@
    "pts_lost": 175,
    "form": [
     "L",
-    "L"
-   ],
-   "pos": 5
-  },
-  {
-   "team": "JURASSICI GOLD",
-   "played": 1,
-   "won": 0,
-   "lost": 1,
-   "points": 0,
-   "sets_won": 0,
-   "sets_lost": 3,
-   "pts_won": 55,
-   "pts_lost": 75,
-   "form": [
     "L"
    ],
    "pos": 6
@@ -1209,5 +1235,5 @@
    "pos": 7
   }
  ],
- "updated_at": "2026-11-09T20:10:08+00:00"
+ "updated_at": "2026-11-13T07:30:56+00:00"
 }
