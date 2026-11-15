@@ -527,8 +527,24 @@
     "lat": 45.4862308,
     "lng": 9.055163
    },
-   "result": null,
-   "sets": []
+   "result": [
+    0,
+    3
+   ],
+   "sets": [
+    [
+     17,
+     25
+    ],
+    [
+     16,
+     25
+    ],
+    [
+     23,
+     25
+    ]
+   ]
   },
   {
    "id": 33608,
@@ -1146,15 +1162,16 @@
  "standings": [
   {
    "team": "VIRTUS BINASCO",
-   "played": 2,
-   "won": 2,
+   "played": 3,
+   "won": 3,
    "lost": 0,
-   "points": 6,
-   "sets_won": 6,
+   "points": 9,
+   "sets_won": 9,
    "sets_lost": 0,
-   "pts_won": 153,
-   "pts_lost": 114,
+   "pts_won": 228,
+   "pts_lost": 170,
    "form": [
+    "W",
     "W",
     "W"
    ],
@@ -1243,19 +1260,20 @@
   },
   {
    "team": "ALVOLLEY ZELIG",
-   "played": 1,
+   "played": 2,
    "won": 0,
-   "lost": 1,
+   "lost": 2,
    "points": 0,
    "sets_won": 0,
-   "sets_lost": 3,
-   "pts_won": 53,
-   "pts_lost": 75,
+   "sets_lost": 6,
+   "pts_won": 109,
+   "pts_lost": 150,
    "form": [
+    "L",
     "L"
    ],
    "pos": 7
   }
  ],
- "updated_at": "2026-11-13T23:00:56+00:00"
+ "updated_at": "2026-11-15T23:00:55+00:00"
 }
