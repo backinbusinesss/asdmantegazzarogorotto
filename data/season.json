@@ -561,8 +561,32 @@
     "lat": 45.4048573,
     "lng": 9.1283882
    },
-   "result": null,
-   "sets": []
+   "result": [
+    3,
+    2
+   ],
+   "sets": [
+    [
+     20,
+     25
+    ],
+    [
+     20,
+     25
+    ],
+    [
+     25,
+     17
+    ],
+    [
+     27,
+     25
+    ],
+    [
+     16,
+     14
+    ]
+   ]
   },
   {
    "id": 33607,
@@ -1179,19 +1203,38 @@
   },
   {
    "team": "VOLLEY CUP TEAM",
-   "played": 2,
-   "won": 2,
+   "played": 3,
+   "won": 3,
    "lost": 0,
-   "points": 5,
-   "sets_won": 6,
-   "sets_lost": 2,
-   "pts_won": 190,
-   "pts_lost": 167,
+   "points": 7,
+   "sets_won": 9,
+   "sets_lost": 4,
+   "pts_won": 298,
+   "pts_lost": 273,
    "form": [
+    "W",
     "W",
     "W"
    ],
    "pos": 2
+  },
+  {
+   "team": "BLACK PANTHERS",
+   "played": 4,
+   "won": 1,
+   "lost": 3,
+   "points": 4,
+   "sets_won": 6,
+   "sets_lost": 10,
+   "pts_won": 358,
+   "pts_lost": 376,
+   "form": [
+    "L",
+    "L",
+    "W",
+    "L"
+   ],
+   "pos": 3
   },
   {
    "team": "VISCONTINI GIALLA",
@@ -1207,7 +1250,7 @@
     "W",
     "L"
    ],
-   "pos": 3
+   "pos": 4
   },
   {
    "team": "MANTEGAZZA ROGOROTTO",
@@ -1222,23 +1265,6 @@
    "form": [
     "W",
     "L"
-   ],
-   "pos": 4
-  },
-  {
-   "team": "BLACK PANTHERS",
-   "played": 3,
-   "won": 1,
-   "lost": 2,
-   "points": 3,
-   "sets_won": 4,
-   "sets_lost": 7,
-   "pts_won": 252,
-   "pts_lost": 268,
-   "form": [
-    "L",
-    "L",
-    "W"
    ],
    "pos": 5
   },
@@ -1275,5 +1301,5 @@
    "pos": 7
   }
  ],
- "updated_at": "2026-11-15T23:00:55+00:00"
+ "updated_at": "2026-11-17T09:30:55+00:00"
 }
