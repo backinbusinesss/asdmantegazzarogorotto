@@ -787,24 +787,6 @@
    "sets": []
   },
   {
-   "id": 33610,
-   "code": "TOP GIR.A22",
-   "round": 8,
-   "datetime": "2026-12-17T21:15:00",
-   "postponed": false,
-   "home": "VIRTUS BINASCO",
-   "away": "ALVOLLEY ZELIG",
-   "venue": {
-    "name": "Palestra scuola media Leonardo da Vinci",
-    "address": "Via Dante",
-    "city": "Lacchiarella",
-    "lat": 45.3241709,
-    "lng": 9.1398445
-   },
-   "result": null,
-   "sets": []
-  },
-  {
    "id": 33609,
    "code": "TOP GIR.A21",
    "round": 8,
@@ -1181,6 +1163,24 @@
    },
    "result": null,
    "sets": []
+  },
+  {
+   "id": 33610,
+   "code": "TOP GIR.A22",
+   "round": 8,
+   "datetime": "2027-02-25T21:15:00",
+   "postponed": false,
+   "home": "VIRTUS BINASCO",
+   "away": "ALVOLLEY ZELIG",
+   "venue": {
+    "name": "Palestra scuola media Leonardo da Vinci",
+    "address": "Via Dante",
+    "city": "Lacchiarella",
+    "lat": 45.3241709,
+    "lng": 9.1398445
+   },
+   "result": null,
+   "sets": []
   }
  ],
  "standings": [
@@ -1301,5 +1301,5 @@
    "pos": 7
   }
  ],
- "updated_at": "2026-11-17T09:30:55+00:00"
+ "updated_at": "2026-11-18T16:30:57+00:00"
 }
