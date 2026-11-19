@@ -26,13 +26,14 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:volleycup-33607@mantegazzarogorotto
-DTSTAMP:20261118T163057Z
+DTSTAMP:20261119T213103Z
 DTSTART;TZID=Europe/Rome:20261119T211500
 DTEND;TZID=Europe/Rome:20261119T231500
-SUMMARY:Virtus Binasco - Mantegazza Rogorotto
+SUMMARY:Virtus Binasco 3-0 Mantegazza Rogorotto
 LOCATION:Palestra scuola media Leonardo da Vinci\, Via Dante\, Lacchiarell
  a
-DESCRIPTION:Volley Cup\, Top misto\, giornata 4
+DESCRIPTION:Volley Cup\, Top misto\, giornata 4\nParziali: 25-8\, 25-19\, 
+ 25-19
 GEO:45.3241709;9.1398445
 END:VEVENT
 END:VCALENDAR
